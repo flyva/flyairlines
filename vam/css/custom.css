@@ -1,6 +1,13 @@
-.navbar-inverse { background-color: #4c4c4c
+body{
+  background: #f9f9f9;
 }
-.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #4c4c4c
+
+.navbar-inverse {
+  background-color: #7C736C;
+  border: none;
+  border-radius: 0px;
+}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #7C736C
 }
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #9f000e
 }
@@ -25,7 +32,7 @@
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
 
 .panel-default > .panel-heading {
-  color: #00000;
+  color: #000000;
   background-color: #ef000a;
   border-color: #ef000a;
 }

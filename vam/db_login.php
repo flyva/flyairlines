@@ -10,8 +10,8 @@
 	 */
 ?>
 <?php
-	$db_host = 'mysql.hostinger.fr';
+	$db_host = 'localhost';
 	$db_database = 'u442310181_virma';
-	$db_username = 'u442310181_virma';
-	$db_password = 'sebloeb123';
+	$db_username = 'root';
+	$db_password = '';
 ?>
