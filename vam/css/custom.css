@@ -1,5 +1,7 @@
 body{
   background: #f9f9f9;
+  font-family: Roboto, Arial, Helvetica sans serif;
+  font-size:16px;
 }
 
 .navbar-inverse {
@@ -11,7 +13,7 @@ body{
 }
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #9f000e
 }
-.dropdown-menu { background-color: #FFFFFF}
+.dropdown-menu { background: linear-gradient(to right bottom, rgba(214, 211, 204, 0.8) 0%, #d6d3cc 25%, #fff3f3 100%);}
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #ef000a
 }
 .navbar-inverse { background-image: none; }
