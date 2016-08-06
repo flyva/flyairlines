@@ -21,7 +21,6 @@
     <meta name="author" content="Quentin R">
     <meta name="viewport" content="width=device-width, initial-scale=1"
     <meta name="google-site-verification" content="Z5sdNiY6xd9OuYDe4U5WbvIRk57dHqj5Fnv8K04dbSQ"/>
-    <title> Fly Airlines VA </title>
 
     <link rel="author" href="https://plus.google.com/u/0/108665243705425046932/"
           title="Virtual Airlines Manager on Google+"/>
@@ -105,25 +104,25 @@
 
 </head>
 <body>
-<div id="top"></div>
-<a href="#top" id="mafleche"><img src="images/fleche.png"/> </a>
 
-<nav class="navbar navbar-inverse" role="navigation">
-    <div class="container">
+<header class="head-section">
+    <div class="navbar navbar-default navbar-static-top container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand" href="index.php">Fly Airlines VA</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
                 <li class="active"><a href="./index.php">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo ABOUT; ?>
-                        <span class="caret"></span></a>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo ABOUT; ?>
+                        <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="./index.php?page=staff"><?php echo STAFF; ?></a></li>
                         <li><a href="./index.php?page=rules"><?php echo RULES; ?></a></li>
@@ -135,55 +134,51 @@
                 </li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
                                         href="#"><?php echo OPERATIONS; ?>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="./index.php?page=fleet_public"><?php echo FLEET; ?></a></li>
-                        <li><a href="./index.php?page=route_public"><?php echo ROUTES; ?></a></li>
-                        <li><a href="./index.php?page=events"><?php echo "Nos Events"; ?></a></li>
-                        <li><a href="./index.php?page=hubs"><?php echo HUBS; ?></a></li>
-                        <li><a href="./index.php?page=tours"><?php echo TOURS; ?></a></li>
-                        <li><a href="./index.php?page=ranks"><?php echo PILOT_RANKS; ?></a></li>
-                        <li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>
-                        <li><a href="./index.php?page=va_global_financial_report"><?php echo GLOBAL_FINANCES; ?></a>
-                        </li>
-                    </ul>
+                        <i class="fa fa-angle-down"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="./index.php?page=fleet_public"><?php echo FLEET; ?></a></li>
+                            <li><a href="./index.php?page=route_public"><?php echo ROUTES; ?></a></li>
+                            <li><a href="./index.php?page=events"><?php echo "Nos Events"; ?></a></li>
+                            <li><a href="./index.php?page=hubs"><?php echo HUBS; ?></a></li>
+                            <li><a href="./index.php?page=tours"><?php echo TOURS; ?></a></li>
+                            <li><a href="./index.php?page=ranks"><?php echo PILOT_RANKS; ?></a></li>
+                            <li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>
+                            <li><a href="./index.php?page=va_global_financial_report"><?php echo GLOBAL_FINANCES; ?></a>
+                            </li>
+                        </ul>
                 </li>
                 <li><a href="./index.php?page=pilots_public"><?php echo PILOTS; ?></a></li>
                 <li><a href="./index.php?page=stats"><?php echo STATS; ?></a></li>
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo LANGUAGES; ?>
-                        <span class="caret"></span></a>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo LANGUAGES; ?>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
                     <ul class="dropdown-menu">
                         <?php echo $linklanguage; ?>
                     </ul>
                 </li>
             </ul>
-            <?php if ($user_logged == 0) {
-            ?>
-            <ul class="nav navbar-nav navbar-right register">
-                <li><a href="./index.php?page=pilot_register"><span class="glyphicon glyphicon-user"></span>
-                        Register</a></li>
-                <li><a href="#myModal" role="button" data-toggle="modal" rel="tooltip" data-original-title='Hello'><span
-                            class="glyphicon glyphicon-log-in"></span>Login</a></li>
-            </ul>
+            <?php if ($user_logged == 0) : ?>
+                <ul class="nav navbar-nav navbar-right register">
+                    <li><a href="./index.php?page=pilot_register"><span class="glyphicon glyphicon-user"></span>
+                            Register</a></li>
+                    <li><a href="#myModal" role="button" data-toggle="modal" rel="tooltip"
+                           data-original-title='Hello'><span
+                                class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                </ul>
+            <?php else : ?>
+                <ul class="nav navbar-nav navbar-right register">
+                    <li><a href="./index_vam.php" role="button"><span class="glyphicon glyphicon-home"></span>
+                            System</a>
+                    </li>
+                    <li><a href="./index.php?page=logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
+                    </li>
+
+                </ul>
+            <?php endif; ?>
         </div>
-        <?php
-        }
-        else {
-            ?>
-            <ul class="nav navbar-nav navbar-right register">
-                <li><a href="./index_vam.php" role="button"><span class="glyphicon glyphicon-home"></span> System</a>
-                </li>
-                <li><a href="./index.php?page=logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
-
-            </ul>
-            <?php
-        }
-        ?>
-
     </div>
-
-    </div>
-</nav>
+</header>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
      aria-hidden="true">
