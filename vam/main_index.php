@@ -28,6 +28,7 @@
 <link rel="shortcut icon" href="images/LOGOFB2.ico" >
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"  href="css/haut.css"/>
+<link rel="stylesheet" type="text/css"  href="css/animate.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-datetimepicker.min.css"/>
@@ -79,7 +80,6 @@ s0.parentNode.insertBefore(s1,s0);
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./index.php">Fly Airlines VA</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -118,15 +118,16 @@ s0.parentNode.insertBefore(s1,s0);
             </ul>
             <?php if ($user_logged==0) {
                 ?>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./index.php?page=pilot_register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-                    <li><a href="#myModal" role="button" data-toggle="modal" rel="tooltip" data-original-title='Hello'><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                </ul>
+                        <ul class="nav navbar-nav navbar-right register">
+                            <li><a href="./index.php?page=pilot_register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                            <li><a href="#myModal" role="button" data-toggle="modal" rel="tooltip" data-original-title='Hello'><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        </ul>
+                    </div>
                 <?php
             }
             else{
                 ?>
-                <ul class="nav navbar-nav navbar-right" >
+                <ul class="nav navbar-nav navbar-right register" >
                     <li><a href = "./index_vam.php" role = "button" ><span class="glyphicon glyphicon-home" ></span> System</a></li>
                     <li><a href = "./index.php?page=logout" ><span class="glyphicon glyphicon-log-out" ></span > Log out</a ></li>
 
@@ -320,16 +321,12 @@ s0.parentNode.insertBefore(s1,s0);
         ?>
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><?php echo "Welcome to Fly Airlines VA"?></h3>
-                    </div>
-                    <div class="panel-body">
+                    <h3>Welcome to Fly Airlines</h3>
                         <p>Bienvenu sur le site de la Fly Airlines, La compagnie Simple Jeune et Dinamyque, profité d'un staff a votre écoutes et des event tous les mois.
                             Nous recrutons <b>des pilotes</b> <i>(du débutant au confirmé)</i> n'hésitez pas, envoyez de suite votre candidature grace au <u>bouton Inscription</u></p>
                         <img src="images/LOGOFACEBOOK.png" sizes="100x100">
-                    </div>
                 </div>
             </div>
 

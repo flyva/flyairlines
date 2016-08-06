@@ -14,7 +14,7 @@ body{
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #9f000e
 }
 .dropdown-menu { background: linear-gradient(to right bottom, rgba(214, 211, 204, 0.8) 0%, #d6d3cc 25%, #fff3f3 100%);}
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #ef000a
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #8f000d
 }
 .navbar-inverse { background-image: none; }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
@@ -33,10 +33,23 @@ body{
 .navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #999999}
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
 
+.container{
+  width: 99%;
+}
+
 .panel-default > .panel-heading {
   color: #000000;
   background-color: #ef000a;
   border-color: #ef000a;
+}
+.register{
+  background-color: #9f000e;
+}
+ul.nav.navbar-nav.navbar-right.register li:first-child{
+  border-right: 10px solid #7C736C;
+}
+ul.nav.navbar-nav.navbar-right.register li a:hover{
+  background-color: #9f000e;
 }
 
 .panel {
@@ -51,9 +64,9 @@ body{
 }
 
 .panel-default > .panel-heading {
-  color: #FFFFFF;
-  background-color: #ef000a;
-  border-color: #ef000a;
+  color: #9e9b94;
+  background-color: #9e9b94;
+  border-color: #9e9b94;
 }
 
 .btn-primary {
@@ -63,10 +76,10 @@ body{
 }
 
 .panel-default > .panel-heading {
-  background-image: -webkit-linear-gradient(top, #ef000a 0%, #ef000a 100%);
-  background-image: -o-linear-gradient(top, #ef000a 0%, #ef000a 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ef000a), to(#ef000a));
-  background-image: linear-gradient(to bottom, #ef000a 0%, #ef000a 100%);
+  background-image: -webkit-linear-gradient(top, #9e9b94 0%, #9e9b94 100%);
+  background-image: -o-linear-gradient(top, #9e9b94 0%, #9e9b94 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9e9b94), to(#9e9b94));
+  background-image: linear-gradient(to bottom, #9e9b94 0%, #9e9b94 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff96c6eb', endColorstr='#ff81bae7', GradientType=0);
 }

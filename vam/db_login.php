@@ -11,7 +11,7 @@
 ?>
 <?php
 	$db_host = 'localhost';
-	$db_database = 'u442310181_virma';
+	$db_database = 'va2';
 	$db_username = 'root';
 	$db_password = '';
 ?>
