@@ -237,72 +237,74 @@
 </div>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="carousel">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                    </ol>
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="./images/slider/1.jpg" alt="...">
+<div class="row">
+    <div class="col-md-12">
+        <div id="carousel">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="./images/slider/1.jpg" alt="...">
 
-                            <div class="carousel-caption">
-                                <h3></h3>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="./images/slider/2.jpg" alt="...">
-
-                            <div class="carousel-caption">
-                                <h3></h3>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="./images/slider/3.jpg" alt="...">
-
-                            <div class="carousel-caption">
-                                <h3></h3>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="./images/slider/4.jpg" alt="...">
-
-                            <div class="carousel-caption">
-                                <h3></h3>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="./images/slider/5.jpg" alt="...">
-
-                            <div class="carousel-caption">
-                                <h3></h3>
-                            </div>
+                        <div class="carousel-caption">
+                            <h3></h3>
                         </div>
                     </div>
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
+                    <div class="item">
+                        <img src="./images/slider/2.jpg" alt="...">
+
+                        <div class="carousel-caption">
+                            <h3></h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./images/slider/3.jpg" alt="...">
+
+                        <div class="carousel-caption">
+                            <h3></h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./images/slider/4.jpg" alt="...">
+
+                        <div class="carousel-caption">
+                            <h3></h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="./images/slider/5.jpg" alt="...">
+
+                        <div class="carousel-caption">
+                            <h3></h3>
+                        </div>
+                    </div>
                 </div>
-                <!-- Carousel -->
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </div>
+            <!-- Carousel -->
         </div>
     </div>
-    <!-- HOME PAGE begin -->
-    <br>
+</div>
 
+    <!-- HOME PAGE begin -->
+<br>
+<br>
+
+<div class="container">
     <?php
     if (!isset($_GET["page"]) || trim($_GET["page"]) == "") {
     $sql = 'select callsign, arrival, departure, flight_status, name, surname, pending_nm, plane_type from vam_live_flights vf, gvausers gu where gu.gvauser_id = vf.gvauser_id ';
@@ -360,17 +362,20 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
                 <h3>Welcome to Fly Airlines</h3>
                 <p>Bienvenu sur le site de la Fly Airlines, La compagnie Simple Jeune et Dinamyque, profité d'un
                     staff a votre écoutes et des event tous les mois.
                     Nous recrutons <b>des pilotes</b> <i>(du débutant au confirmé)</i> n'hésitez pas, envoyez de
                     suite votre candidature grace au <u>bouton Inscription</u></p>
                 <img src="images/LOGOFACEBOOK.png" sizes="100x100">
-            </div>
+        </div>
+        <div class="hr">
+            <span class="hr-inner"></span>
         </div>
 
-        <div class="col-md-4">
+
+
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo STATISTICS_VA; ?></h3>
@@ -393,56 +398,12 @@
                             <td><?php echo PILOT_HOURS; ?></td>
                             <td><?php echo 0 + $va_hours; ?></td>
                         </tr>
-                        <tr>
-                            <td><?php echo ST_NUMFLIGHTS; ?></td>
-                            <td><?php echo $num_fskeeper + $num_pireps + $num_reports + $num_vamacars - $num_fsacars_rejected - $num_fskeeper_rejected - $num_pireps_rejected - $num_vamacars_rejected; ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo ST_NUMREGULAR; ?></td>
-                            <td><?php echo $num_fskeeper_reg + $num_pireps_reg + $num_reports_reg + $num_vamacars_reg - $num_pireps_reg_rejected - $num_fskeeper_reg_rejected - $num_fsacars_reg_rejected - $num_vamacars_reg_rejected; ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo ST_NUMCHARTER; ?></td>
-                            <td><?php echo $num_pireps + $num_fskeeper + $num_fsacars + $num_vamacars - $num_pireps_reg - $num_fskeeper_reg - $num_fsacars_reg - $num_vamacars_reg; ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo ST_PERREGULAR; ?></td>
-                            <td><?php if (($num_fskeeper + $num_pireps + $num_reports + $num_vamacars - $num_fsacars_rejected - $num_fskeeper_rejected - $num_pireps_rejected - $num_vamacars_rejected) < 1) {
-                                    echo '0 %';
-                                } else {
-                                    echo number_format((100 * ($num_pireps_reg + $num_fskeeper_reg + $num_fsacars_reg + $num_vamacars_reg - $num_pireps_reg_rejected - $num_fskeeper_reg_rejected - $num_fsacars_reg_rejected - $num_vamacars_reg_rejected)) / ($num_pireps + $num_fskeeper + $num_fsacars + $num_vamacars - $num_fsacars_rejected - $num_fskeeper_rejected - $num_pireps_rejected - $num_vamacars_rejected), 2) . ' %';
-                                } ?></td>
-                        </tr>
                     </table>
                 </div>
             </div>
             <div class="clearfix visible-lg"></div>
         </div>
 
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">Nos Vols en ligne</h3>
-                </div>
-                <div class="panel-body">
-                    <object id='RealtimeNG'
-                            codeBase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0'
-                            align='middle' style='width:715px;height:391px'
-                            classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' salign='t'>
-                        <param name='Movie' value='http://www.utr-online.com/RealtimeNG.swf?refApt=FYA'>
-                        <param name='bgcolor' value='#000000'>
-                        <param name='menu' value='false'>
-                        <param name='allowScriptAccess' value='always'>
-                        <param name='FlashVars'
-                               value='fontcolor1=DD0000&fontcolor2=FF0000&fontcolor3=474444&network=IVAO&NRLines=15&switch=0&switchnetwork=0&locked=0&range=0&sound=0&logos=0&VAName=Fly Airlines VA'>
-                        <embed src='http://www.utr-online.com/RealtimeNG.swf?refApt=FYA' allowScriptAccess='always'
-                               FlashVars='fontcolor1=DD0000&fontcolor2=FF0000&fontcolor3=474444&network=IVAO&NRLines=15&switch=0&switchnetwork=0&locked=0&range=0&sound=0&logos=0&VAName=Fly Airlines VA'
-                               quality='high' bgcolor='#000000' width='715' height='391' name='RealtimeNG'
-                               menu='false' align='middle' salign='t' type='application/x-shockwave-flash'
-                               pluginspage='http://www.macromedia.com/go/getflashplayer'></embed>
-                    </object>
-                </div>
-            </div>
-        </div>
 
         <?php /*
         <div class="col-md-4">
@@ -480,157 +441,135 @@ from notams order by publish_date asc limit 5";
             <div class="clearfix visible-lg"></div>
         </div>
         */ ?>
+        <div class="hr">
+            <span class="hr-inner"></span>
+        </div>
+        <div id="home-services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>LE STAFF</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="h-service">
+                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                            </div>
+                            <div class="h-service-content wow fadeInUp">
+                                <h3>
+                                    Quentin RAULT
+                                </h3>
+                                <h4>
+                                    Fondateur et PDG,<br>
+                                    de Fly Airlines depuis<br>
+                                    Juillet 2015.<br>
 
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?php echo NEWEST_PILOTS_VA; ?></h3>
-                </div>
-                <div class="panel-body">
-                    <?php $new_pilots = getNewestPilots(); ?>
-                    <table class="table table-hover">
-                        <tr>
-                            <th><?php echo NEWPILOT; ?></th>
-                            <th> <?php echo NEWJOINED; ?> </th>
-                        </tr>
-                        <?php while ($row = $new_pilots->fetch_assoc()): ?>
-                            <tr>
-                                <td><?php echo $row["pilot"] ?> </td>
-                                <td><?php echo $row["register_date"] ?> </td>
-                            </tr>
-                        <?php endwhile; ?>
-                    </table>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="h-service">
+                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                            </div>
+                            <div class="h-service-content wow fadeInUp">
+                                <h3>
+                                    Célia BOUCHET
+                                </h3>
+                                <a href="http://cellyacreations.wixsite.com/portfolio">
+                                    <h5>
+                                        Céllya Créations
+                                    </h5>
+                                </a>
+                                <h4>
+                                    Graphiste, et en partenariat<br>
+                                    Célia, nous réalises toutes nos bannière, logo etc...
+                                    <br>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="h-service">
+                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                            </div>
+                            <div class="h-service-content wow fadeInUp">
+                                <h3>
+                                    Lilian Vivenot
+                                </h3>
+                                <h4>
+                                    Directeur des Opération,<br>
+                                    modifie ou creer les route<br>
+                                    de la compagnie.<br>
+
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="h-service">
+                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                            </div>
+                            <div class="h-service-content wow fadeInUp">
+                                <h3>
+                                    Clément GUINAMANT
+                                </h3>
+                                <h4>
+                                    Directeur Event<br>
+                                    Il importe de l'animation<br>
+                                    dans la compagnie, en créent<br>
+                                    des évent, tours, etc ...
+                                    <br>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="clearfix visible-lg"></div>
         </div>
-
-    </div>
     <!-- Row 2 -->
-    <div class="row">
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?php echo LATEST_FLIGHTS_VA; ?></h3>
-                </div>
-                <div class="panel-body">
-                    <?php $latest_flights = getLatestFlights(); ?>
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <tr>
-                                <th><?php echo LF_CALLSIG ?></th>
-                                <th><?php echo LF_PILOT ?></th>
-                                <th><?php echo LF_DEPARTURE ?></th>
-                                <th><?php echo LF_ARRIVAL ?></th>
-                                <th><?php echo LF_FLIGHTDATE ?></th>
-                                <th><?php echo LF_FLIGHTTIME ?></th>
-                            </tr>
-                            <?php while ($row = $latest_flights->fetch_assoc()): ?>
-                                <tr>
-                                    <td><?php echo $row["callsign"] ?> </td>
-                                    <td><?php echo $row["pilot_name"] ?> </td>
-                                    <td><?php echo $row["departure"] ?> </td>
-                                    <td><?php echo $row["arrival"] ?> </td>
-                                    <td><?php echo $row["date_string"] ?> </td>
-                                    <td><?php echo $row["time"] ?> </td>
-                                </tr>
-                            <?php endwhile; ?>
-                        </table>
-                    </div>
-                </div>
-            </div>
+        <div class="hr">
+            <span class="hr-inner"></span>
         </div>
-    </div>
-    <!-- Row 3 -->
-    <div class="row">
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?php echo FUTURE_EVENTS; ?></h3>
+
+        <div class="container">
+            <div class="row mar-b-50 our-clients">
+                <div class="col-md-3">
+                    <h2>
+                        Nos Partenaires
+                    </h2>
+                    <a href="nospartenariat.php">
+                        <u>Tous nos partenariats</u>
+                    </a>
                 </div>
-                <div class="panel-body">
-                    <?php $future_events = getFutureEvents(); ?>
-                    <table class="table table-striped">
-                        <tr>
-                            <th><?php echo EVENT_NAME; ?></th>
-                            <th> <?php echo EVENT_DATE; ?> </th>
-                        </tr>
-                        <?php while ($row = $future_events->fetch_assoc()): ?>
-                            <?php if (($row["publish_date"] - $row["currdat"] <= 0) && ($row["hide_date"] - $row["currdat"] > 0)) : ?>
-                                <tr>
-                                    <td>
-                                        <a href="index.php?page=event&event_id=<?php echo $row["pilot"] ?>">
-                                            <?php echo $row["event_name"]; ?>
-                                        </a>
-                                    </td>
-                                    <td><?php echo $row["publish_date_web"] ?> </td>
-                                </tr>
-                            <?php endif; ?>
-                        <?php endwhile; ?>
-                    </table>
+                <div class="col-md-9">
+                    <ul class="bxslider1 clients-list">
+                        <li>
+                            <a href="#">
+                                <img src="images/fsradio.png" alt="" style="width: 250px; height: 298px;"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/favi1.png" alt="" />
+
+                                <img src="images/favi1.png" class="color-img" alt="" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/opensky.png" alt="" />
+
+                                <img src="images/opensky.png" class="color-img" alt="" />
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
                 </div>
             </div>
+            <!-- END CLIENTS -->
         </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?php echo TWEETS; ?></h3>
-                </div>
-                <div class="panel-body">
-                    <a class="twitter-timeline" href="https://twitter.com/flyairlinesva"
-                       data-widget-id="728543604591972353">Tweets de @flyairlinesva</a>
-                    <script>!function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                            if (!d.getElementById(id)) {
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src = p + "://platform.twitter.com/widgets.js";
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }
-                        }(document, "script", "twitter-wjs");</script>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><?php echo "Nos Partenariats" ?></h3>
-                    </div>
-                    <div class="panel-body">
-                        <p>
-                        <center><a href="http://fsradio.fr"><img src="./images/fsradio.png" style="width: 200px;">
-                                <td width="100%">&nbsp;</td>
-                                <a href="http://cellyacreations.wix.com/portfolio"><img src="./images/favi1.png"
-                                                                                        style="width: 200px;">
-                                    <td width="100%">&nbsp;</td>
-                                    <a href="http://www.openskyradio.fr/"><img src="./images/opensky.png"
-                                                                               style="width: 200px;"></a></center>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div src="http://soundcloud.apps.wix.com/index?cacheKiller=1463364522831&compId=comp-
-io98s0fb&deviceType=desktop&instance=Vpq2U_lBUSz98Oxu50GrAgZWTaA_jt0K7loQtMdeEO8.eyJpbnN0YW5jZUlkIjoiOGNhYmY0NTItZmFlYS00YThiLTlmZTktNzIxYzIzMjE4NzBiIiwic2lnbkRhdGUiOiIyMDE2LTA1LTE2VDAyOjA4
-OjQxLjI4N1oiLCJ1aWQiOm51bGwsInBlcm1pc3Npb25zIjpudWxsLCJpcEFuZFBvcnQiOiI5MC42Mi4yMDkuMTUwLzYwMzA5IiwidmVuZG9yUHJvZHVjdElkIjpudWxsLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6IjcyOGQ2MTg3LWMwNGYtNGVmNC1iN
-Dk4LTlkM2NlMDk4OGQ4MCIsImJpVG9rZW4iOiJkNDc0OWJmNi03OGI3LTBlNjEtMTE0ZS02ZWIwOTBkNjdjNzUiLCJzaXRlT3duZXJJZCI6IjNhZDdiMDlhLWM4YzQtNDk5Ny1iNjM1LTFjN2ZjOTUwNTA5MCJ9&locale=fr&viewMode=site&width
-=202" style="top:75px;bottom:;left:195px;right:;width:31px;height:28px;position:absolute;" class="s4"
-                 data-state="autoplaye" id="comp-id29u1lc" data-reactid=".0.$SITE_ROOT.
-$desktop_siteRoot.$SITE_HEADER.1.1.$comp-id29u1lc">
-                <div id="comp-id29u1lcplayButton" class="s4playButton" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-
-id29u1lc.0"><span data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-id29u1lc.0.0"></span></div>
-                <div id="comp-id29u1lcpauseButton" class="s4pauseButton" data-reactid=".0.
-$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-id29u1lc.1"><span
-                        data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-id29u1lc.1.0"></span>
-                </div>
-                <div id="comp-
-id29u1lcstopButton" class="s4stopButton"
-                     data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-id29u1lc.2"><span
-                        data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.
-$SITE_HEADER.1.1.$comp-id29u1lc.2.0"></span></div>
-                <div id="comp-id29u1lcloadingAnimation" class="s4loadingAnimation" data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-
-id29u1lc.3"><span data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-id29u1lc.3.0"></span></div>
-            </div>
+
             <!-- REMOVE COMMENTS to display ONLNE NETWORKS section
 			<div class="col-md-4">
 				<div class="panel panel-default">
@@ -673,28 +612,205 @@ id29u1lc.3"><span data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1
         ?>
     </div>
     <br>
-    <div class="container-fluid">
-
-        <hr>
-        <div class="text-center center-block">
-            <p class="txt-railway"><a href="http://virtualairlinesmanager.net">Powered by Virtual Airlines
-                    Manager</a></p>
-            <a href="https://www.facebook.com/flyairlineva"><i id="social"
-                                                               class="fa fa-facebook-square fa-3x social-fb"></i></a>
-            <a href="https://twitter.com/flyairlinesva"><i id="social"
-                                                           class="fa fa-twitter-square fa-3x social-tw"></i></a>
-            <a href="https://plus.google.com/"><i id="social" class="fa fa-google-plus-square fa-3x social-gp"></i></a>
-            <a href="mailto:contact.flyairlines@gmail.com"><i id="social"
-                                                              class="fa fa-envelope-square fa-3x social-em"></i></a>
-            <br/>
-            <br/>
-            <a href="http://virtualairlinesmanager.net" target="_blank"><img src="images/logo_vam.png"/></a>
+<!--footer start-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                <h1>
+                    contact info
+                </h1>
+                <address>
+                    <p><i class="fa fa-home pr-10"></i>75000, Paris</p>
+                    <p><i class="fa fa-envelope pr-10"></i>Email :   <a href="javascript:;">contact.flyairlines@gmail.com</a></p>
+                </address>
+            </div>
+            <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
+                <h1>facebook</h1>
+                <div class="tweet-box">
+                    <i class="fa fa-facebook"></i>
+                    <em>
+                        Un TS pour la VA es mis en place a l'adresse: flyairlinesva.miki-heberg.fr
+                    </em>
+                </div>
+                <div class="tweet-box">
+                    <i class="fa fa-facebook"></i>
+                    <em>
+                        Please follow
+                        <a href="javascript:;">@example</a>
+                        for all future updates of us!
+                        <a href="javascript:;">twitter.com/acme</a>
+                    </em>
+                </div>
+                <div class="tweet-box">
+                    <i class="fa fa-facebook"></i>
+                    <em>
+                        Please follow
+                        <a href="javascript:;">@example</a>
+                        for all future updates of us!
+                        <a href="javascript:;">twitter.com/acme</a>
+                    </em>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3">
+                <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+                    <h1>
+                        Our Company
+                    </h1>
+                    <ul class="page-footer-list">
+                        <li>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="about.html">About Us</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="faq.html">Support</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="privacy-policy.html">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-angle-right"></i>
+                            <a href="terms.html">Term & condition</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3">
+                <div class="text-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".7s">
+                    <h1>
+                    </h1>
+                    <p>
+                        <h1>Fly Airline,</h1>la compagnie Simple, Jeune, et Dynamique.
+                    </p>
+                </div>
+            </div>
         </div>
-
     </div>
+</footer>
+<!-- footer end -->
+<!--small footer start -->
+<footer class="footer-small">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6 pull-right">
+                <ul class="social-link-footer list-unstyled">
+                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".1s"><a href="https://www.facebook.com/flyairlineva"><i class="fa fa-facebook"></i></a></li>
+                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".5s"><a href="https://twitter.com/flyairlinesva"><i class="fa fa-twitter"></i></a></li>
+                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".6s"><a href="#"><i class="fa fa-skype"></i></a></li>
+                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".8s"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div class="copyright">
+                    <p>&copy; Copyright - Acme Theme by cosmic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--small footer end-->
+<!-- js placed at the end of the document so the pages load faster
+<script src="js/jquery.js">
+</script>
+-->
+<script src="js/jquery-1.8.3.min.js">
+</script>
+<script src="js/bootstrap.min.js">
+</script>
+<script type="text/javascript" src="js/hover-dropdown.js">
+</script>
+<script defer src="js/jquery.flexslider.js">
+</script>
+<script type="text/javascript" src="assets/bxslider/jquery.bxslider.js">
+</script>
 
-    <br/>
+<script type="text/javascript" src="js/jquery.parallax-1.1.3.js">
+</script>
+<script src="js/wow.min.js">
+</script>
+<script src="assets/owlcarousel/owl.carousel.js">
+</script>
 
+<script src="js/jquery.easing.min.js">
+</script>
+<script src="js/link-hover.js">
+</script>
+<script src="js/superfish.js">
+</script>
+<script type="text/javascript" src="js/parallax-slider/jquery.cslider.js">
+</script>
+<script type="text/javascript">
+    $(function() {
+
+        $('#da-slider').cslider({
+            autoplay    : true,
+            bgincrement : 100
+        });
+
+    });
+</script>
+
+
+
+<!--common script for all pages-->
+<script src="js/common-scripts.js">
+</script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+
+        $('.bxslider1').bxSlider({
+            minSlides: 5,
+            maxSlides: 6,
+            slideWidth: 360,
+            slideMargin: 2,
+            moveSlides: 1,
+            responsive: true,
+            nextSelector: '#slider-next',
+            prevSelector: '#slider-prev',
+            nextText: 'Onward →',
+            prevText: '← Go back'
+        });
+
+    });
+
+
+</script>
+
+
+<script>
+    $('a.info').tooltip();
+
+    $(window).load(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function(slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+
+    $(document).ready(function() {
+
+        $("#owl-demo").owlCarousel({
+
+            items : 4
+
+        });
+
+    });
+
+    jQuery(document).ready(function(){
+        jQuery('ul.superfish').superfish();
+    });
+
+    new WOW().init();
+
+
+</script>
 
 </body>
 <script type="text/javascript" src="js/moment-with-locales.js"></script>

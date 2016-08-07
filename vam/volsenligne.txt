@@ -1,0 +1,135 @@
+ <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">Nos Vols en ligne</h3>
+                </div>
+                <div class="panel-body">
+                    <object id='RealtimeNG'
+                            codeBase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0'
+                            align='middle' style='width:715px;height:391px'
+                            classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' salign='t'>
+                        <param name='Movie' value='http://www.utr-online.com/RealtimeNG.swf?refApt=FYA'>
+                        <param name='bgcolor' value='#000000'>
+                        <param name='menu' value='false'>
+                        <param name='allowScriptAccess' value='always'>
+                        <param name='FlashVars'
+                               value='fontcolor1=DD0000&fontcolor2=FF0000&fontcolor3=474444&network=IVAO&NRLines=15&switch=0&switchnetwork=0&locked=0&range=0&sound=0&logos=0&VAName=Fly Airlines VA'>
+                        <embed src='http://www.utr-online.com/RealtimeNG.swf?refApt=FYA' allowScriptAccess='always'
+                               FlashVars='fontcolor1=DD0000&fontcolor2=FF0000&fontcolor3=474444&network=IVAO&NRLines=15&switch=0&switchnetwork=0&locked=0&range=0&sound=0&logos=0&VAName=Fly Airlines VA'
+                               quality='high' bgcolor='#000000' width='715' height='391' name='RealtimeNG'
+                               menu='false' align='middle' salign='t' type='application/x-shockwave-flash'
+                               pluginspage='http://www.macromedia.com/go/getflashplayer'></embed>
+                    </object>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><?php echo NEWEST_PILOTS_VA; ?></h3>
+                        </div>
+                        <div class="panel-body">
+                            <?php $new_pilots = getNewestPilots(); ?>
+                            <table class="table table-hover">
+                                <tr>
+                                    <th><?php echo NEWPILOT; ?></th>
+                                    <th> <?php echo NEWJOINED; ?> </th>
+                                </tr>
+                                <?php while ($row = $new_pilots->fetch_assoc()): ?>
+                                    <tr>
+                                        <td><?php echo $row["pilot"] ?> </td>
+                                        <td><?php echo $row["register_date"] ?> </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-lg"></div>
+                </div>
+
+                 <div class="row">
+                        <div class="col-md-8">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><?php echo LATEST_FLIGHTS_VA; ?></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <?php $latest_flights = getLatestFlights(); ?>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <th><?php echo LF_CALLSIG ?></th>
+                                                <th><?php echo LF_PILOT ?></th>
+                                                <th><?php echo LF_DEPARTURE ?></th>
+                                                <th><?php echo LF_ARRIVAL ?></th>
+                                                <th><?php echo LF_FLIGHTDATE ?></th>
+                                                <th><?php echo LF_FLIGHTTIME ?></th>
+                                            </tr>
+                                            <?php while ($row = $latest_flights->fetch_assoc()): ?>
+                                                <tr>
+                                                    <td><?php echo $row["callsign"] ?> </td>
+                                                    <td><?php echo $row["pilot_name"] ?> </td>
+                                                    <td><?php echo $row["departure"] ?> </td>
+                                                    <td><?php echo $row["arrival"] ?> </td>
+                                                    <td><?php echo $row["date_string"] ?> </td>
+                                                    <td><?php echo $row["time"] ?> </td>
+                                                </tr>
+                                            <?php endwhile; ?>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><?php echo FUTURE_EVENTS; ?></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <?php $future_events = getFutureEvents(); ?>
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <th><?php echo EVENT_NAME; ?></th>
+                                                <th> <?php echo EVENT_DATE; ?> </th>
+                                            </tr>
+                                            <?php while ($row = $future_events->fetch_assoc()): ?>
+                                                <?php if (($row["publish_date"] - $row["currdat"] <= 0) && ($row["hide_date"] - $row["currdat"] > 0)) : ?>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="index.php?page=event&event_id=<?php echo $row["pilot"] ?>">
+                                                                <?php echo $row["event_name"]; ?>
+                                                            </a>
+                                                        </td>
+                                                        <td><?php echo $row["publish_date_web"] ?> </td>
+                                                    </tr>
+                                                <?php endif; ?>
+                                            <?php endwhile; ?>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><?php echo TWEETS; ?></h3>
+                                    </div>
+                                     <div class="panel-body">
+                                                        <a class="twitter-timeline" href="https://twitter.com/flyairlinesva"
+                                                           data-widget-id="728543604591972353">Tweets de @flyairlinesva</a>
+                                                        <script>!function (d, s, id) {
+                                                                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                                                                if (!d.getElementById(id)) {
+                                                                    js = d.createElement(s);
+                                                                    js.id = id;
+                                                                    js.src = p + "://platform.twitter.com/widgets.js";
+                                                                    fjs.parentNode.insertBefore(js, fjs);
+                                                                }
+                                                            }(document, "script", "twitter-wjs");</script>
+                                                    </div>
+                                                </div>
+
