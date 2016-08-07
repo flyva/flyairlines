@@ -1,8 +1,47 @@
 
+.hr {
+    clear: both;
+}
+
+.ovh {
+    overflow: hidden;
+}
+
 .head-section .navbar-collapse ul.navbar-nav.navbar-left {
     margin-left: 5%;
 }
 
 .head-section .navbar-static-top {
     padding: 0 5.5%;
+}
+
+.stats {
+    text-align: center;
+}
+
+.stats .badge {
+    border-radius: 80px;
+    padding: 22px 22px;
+    height: 130px;
+    width: 130px;
+}
+
+.stats .badge .flyvaicon {
+    font-size: 50px;
+}
+
+.stats .badge .txt {
+    font-size: 30px;
+    font-family: "Caviar", Helvetica, Arial, sans-serif
+}
+
+.staff .h-service {
+    min-height: 220px;
+}
+
+.clients-list.bxslider1 li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 281.33px;
 }

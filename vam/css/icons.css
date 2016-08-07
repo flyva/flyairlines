@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'flyva';
+    src: url('../fonts/flyva.eot?hojlnw');
+    src: url('../fonts/flyva.eot?hojlnw#iefix') format('embedded-opentype'),
+    url('../fonts/flyva.ttf?hojlnw') format('truetype'),
+    url('../fonts/flyva.woff?hojlnw') format('woff'),
+    url('../fonts/flyva.svg?hojlnw#flyva') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="flyva-"], [class*=" flyva-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'flyva' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flyva-route:before {
+    content: "\e905";
+}
+
+.flyva-artistic-brush:before {
+    content: "\e906";
+}
+
+.flyva-ceo:before {
+    content: "\e907";
+}
+
+.flyva-eventl:before {
+    content: "\e908";
+}
+
+.flyva-wall-clock:before {
+    content: "\e904";
+}
+
+.flyva-fleet:before {
+    content: "\e900";
+}
+
+.flyva-globe:before {
+    content: "\e901";
+}
+
+.flyva-pilot:before {
+    content: "\e902";
+}
+
+.flyva-transport:before {
+    content: "\e903";
+}

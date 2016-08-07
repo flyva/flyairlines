@@ -49,6 +49,8 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="css/component.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet"/>
     <link href="css/flyairlines.css" rel="stylesheet"/>
@@ -65,7 +67,7 @@
     </script>
     <![endif]-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
     <script src="Charts/Chart.js"></script>
@@ -300,7 +302,7 @@
     </div>
 </div>
 
-    <!-- HOME PAGE begin -->
+<!-- HOME PAGE begin -->
 <br>
 <br>
 
@@ -362,43 +364,60 @@
 
     <div class="row">
         <div class="col-md-12">
-                <h3>Welcome to Fly Airlines</h3>
-                <p>Bienvenu sur le site de la Fly Airlines, La compagnie Simple Jeune et Dinamyque, profité d'un
-                    staff a votre écoutes et des event tous les mois.
-                    Nous recrutons <b>des pilotes</b> <i>(du débutant au confirmé)</i> n'hésitez pas, envoyez de
-                    suite votre candidature grace au <u>bouton Inscription</u></p>
-                <img src="images/LOGOFACEBOOK.png" sizes="100x100">
+            <h3>Welcome to Fly Airlines</h3>
+            <p>Bienvenu sur le site de la Fly Airlines, La compagnie Simple Jeune et Dinamyque, profité d'un
+                staff a votre écoutes et des event tous les mois.
+                Nous recrutons <b>des pilotes</b> <i>(du débutant au confirmé)</i> n'hésitez pas, envoyez de
+                suite votre candidature grace au <u>bouton Inscription</u></p>
+            <img src="images/LOGOFACEBOOK.png" sizes="100x100">
         </div>
         <div class="hr">
             <span class="hr-inner"></span>
         </div>
 
 
-
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?php echo STATISTICS_VA; ?></h3>
+            <div class="stats h-service ovh">
+                <h2><?php echo STATISTICS_VA; ?></h2>
+                <div class="col-md-3">
+                    <span class="badge bg-green wow fadeInDown">
+                        <span class="flyvaicon flyva-pilot"></span>
+                        <br/>
+                        <span class="txt"><?php echo $num_pilots; ?></span>
+                    </span>
+                    <div class="h-service-content wow fadeInUp">
+                        <p><?php echo ST_NUMPILOTS; ?></p>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <table class="table table-hover">
-                        <tr>
-                            <td><?php echo ST_NUMPILOTS; ?></td>
-                            <td><?php echo $num_pilots; ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo ST_NUMPLANES; ?></td>
-                            <td><?php echo $num_planes; ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo ST_NUMROUTES; ?></td>
-                            <td><?php echo $num_routes; ?></td>
-                        </tr>
-                        <tr>
-                            <td><?php echo PILOT_HOURS; ?></td>
-                            <td><?php echo 0 + $va_hours; ?></td>
-                        </tr>
-                    </table>
+                <div class="col-md-3">
+                    <span class="badge bg-aqua wow fadeInDown">
+                        <span class="flyvaicon flyva-fleet"></span>
+                        <br/>
+                        <span class="txt"><?php echo $num_planes; ?></span>
+                    </span>
+                    <div class="h-service-content wow fadeInUp">
+                        <p><?php echo ST_NUMPLANES; ?></p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <span class="badge bg-teal wow fadeInDown">
+                        <span class="flyvaicon flyva-globe"></span>
+                        <br/>
+                        <span class="txt"><?php echo $num_routes; ?></span>
+                    </span>
+                    <div class="h-service-content wow fadeInUp">
+                        <p><?php echo ST_NUMROUTES; ?></p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <span class="badge bg-red wow fadeInDown">
+                        <span class="flyvaicon flyva-wall-clock"></span>
+                        <br/>
+                        <span class="txt"><?php echo 0 + $va_hours; ?></span>
+                    </span>
+                    <div class="h-service-content wow fadeInUp">
+                        <p><?php echo PILOT_HOURS; ?></p>
+                    </div>
                 </div>
             </div>
             <div class="clearfix visible-lg"></div>
@@ -444,32 +463,34 @@ from notams order by publish_date asc limit 5";
         <div class="hr">
             <span class="hr-inner"></span>
         </div>
-        <div id="home-services">
+        <div id="home-services" class="staff">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <h2>LE STAFF</h2>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="h-service">
                             <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                                <span class="flyva-ceo"></span>
                             </div>
                             <div class="h-service-content wow fadeInUp">
                                 <h3>
                                     Quentin RAULT
                                 </h3>
-                                <h4>
+                                <p>
                                     Fondateur et PDG,<br>
                                     de Fly Airlines depuis<br>
                                     Juillet 2015.<br>
 
-                                </h4>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="h-service">
                             <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                                <span class="flyva-artistic-brush"></span>
                             </div>
                             <div class="h-service-content wow fadeInUp">
                                 <h3>
@@ -480,53 +501,55 @@ from notams order by publish_date asc limit 5";
                                         Céllya Créations
                                     </h5>
                                 </a>
-                                <h4>
+                                <p>
                                     Graphiste, et en partenariat<br>
                                     Célia, nous réalises toutes nos bannière, logo etc...
                                     <br>
-                                </h4>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="h-service">
                             <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                                <span class="flyva-route"></span>
                             </div>
                             <div class="h-service-content wow fadeInUp">
                                 <h3>
                                     Lilian Vivenot
                                 </h3>
-                                <h4>
+                                <p>
                                     Directeur des Opération,<br>
                                     modifie ou creer les route<br>
                                     de la compagnie.<br>
 
-                                </h4>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="h-service">
                             <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                                <span class="flyva-eventl"></span>
                             </div>
                             <div class="h-service-content wow fadeInUp">
                                 <h3>
                                     Clément GUINAMANT
                                 </h3>
-                                <h4>
+                                <p>
                                     Directeur Event<br>
                                     Il importe de l'animation<br>
                                     dans la compagnie, en créent<br>
                                     des évent, tours, etc ...
                                     <br>
-                                </h4>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- Row 2 -->
+        <!-- Row 2 -->
         <div class="hr">
             <span class="hr-inner"></span>
         </div>
@@ -542,35 +565,42 @@ from notams order by publish_date asc limit 5";
                     </a>
                 </div>
                 <div class="col-md-9">
+                    <div class="outside">
+                        <p>
+                            <span id="slider-prev"></span>
+                            |
+                            <span id="slider-next"></span>
+                        </p>
+                    </div>
                     <ul class="bxslider1 clients-list">
                         <li>
                             <a href="#">
-                                <img src="images/fsradio.png" alt="" style="width: 250px; height: 298px;"/>
+                                <img src="images/fsradio.png" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/favi1.png" alt="" />
+                                <img src="images/favi1.png" alt=""/>
 
-                                <img src="images/favi1.png" class="color-img" alt="" />
+                                <img src="images/favi1.png" class="color-img" alt=""/>
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <img src="images/opensky.png" alt="" />
+                                <img src="images/opensky.png" alt=""/>
 
-                                <img src="images/opensky.png" class="color-img" alt="" />
+                                <img src="images/opensky.png" class="color-img" alt=""/>
                             </a>
                         </li>
                     </ul>
 
                 </div>
-                </div>
             </div>
-            <!-- END CLIENTS -->
         </div>
+        <!-- END CLIENTS -->
+    </div>
 
-            <!-- REMOVE COMMENTS to display ONLNE NETWORKS section
+    <!-- REMOVE COMMENTS to display ONLNE NETWORKS section
 			<div class="col-md-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -579,39 +609,36 @@ from notams order by publish_date asc limit 5";
 					<div class="panel-body">
 						<div class="container">
 							<?php
-            /*
-                if ($ivao == 1) {
-                    echo '<img src="./images/ivao.gif" height="50" width="50">';
-                }
-                if ($vatsim == 1) {
-                    echo '<img src="./images/Vatsim.png" height="50" width="50">';
-                }
-            */
-            ?>
+    /*
+        if ($ivao == 1) {
+            echo '<img src="./images/ivao.gif" height="50" width="50">';
+        }
+        if ($vatsim == 1) {
+            echo '<img src="./images/Vatsim.png" height="50" width="50">';
+        }
+    */
+    ?>
 						</div>
 					</div>
 				</div>
 				<div class="clearfix visible-lg"></div>
 			</div> -->
-        </div>
+</div>
 
 
-        <br>
-        <!-- HOME PAGE End -->
-        <?php
-        }
-        if (!isset($_GET["page"]) || trim($_GET["page"]) == "") {
-        } else {
-            $Existe = file_exists($_GET["page"] . ".php");
-            if ($Existe == true) {
-                include($_GET["page"] . ".php");
-            } else {
-                echo "Page Not Found";
-            }
-        }
-        ?>
-    </div>
-    <br>
+<!-- HOME PAGE End -->
+<?php
+}
+if (!isset($_GET["page"]) || trim($_GET["page"]) == "") {
+} else {
+    $Existe = file_exists($_GET["page"] . ".php");
+    if ($Existe == true) {
+        include($_GET["page"] . ".php");
+    } else {
+        echo "Page Not Found";
+    }
+}
+?>
 <!--footer start-->
 <footer class="footer">
     <div class="container">
@@ -622,7 +649,8 @@ from notams order by publish_date asc limit 5";
                 </h1>
                 <address>
                     <p><i class="fa fa-home pr-10"></i>75000, Paris</p>
-                    <p><i class="fa fa-envelope pr-10"></i>Email :   <a href="javascript:;">contact.flyairlines@gmail.com</a></p>
+                    <p><i class="fa fa-envelope pr-10"></i>Email : <a
+                            href="javascript:;">contact.flyairlines@gmail.com</a></p>
                 </address>
             </div>
             <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
@@ -682,7 +710,7 @@ from notams order by publish_date asc limit 5";
                     <h1>
                     </h1>
                     <p>
-                        <h1>Fly Airline,</h1>la compagnie Simple, Jeune, et Dynamique.
+                    <h1>Fly Airline,</h1>la compagnie Simple, Jeune, et Dynamique.
                     </p>
                 </div>
             </div>
@@ -696,10 +724,14 @@ from notams order by publish_date asc limit 5";
         <div class="row">
             <div class="col-lg-6 col-sm-6 pull-right">
                 <ul class="social-link-footer list-unstyled">
-                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".1s"><a href="https://www.facebook.com/flyairlineva"><i class="fa fa-facebook"></i></a></li>
-                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".5s"><a href="https://twitter.com/flyairlinesva"><i class="fa fa-twitter"></i></a></li>
-                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".6s"><a href="#"><i class="fa fa-skype"></i></a></li>
-                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".8s"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".1s"><a
+                            href="https://www.facebook.com/flyairlineva"><i class="fa fa-facebook"></i></a></li>
+                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".5s"><a
+                            href="https://twitter.com/flyairlinesva"><i class="fa fa-twitter"></i></a></li>
+                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".6s"><a href="#"><i
+                                class="fa fa-skype"></i></a></li>
+                    <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".8s"><a href="#"><i
+                                class="fa fa-youtube"></i></a></li>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -715,10 +747,6 @@ from notams order by publish_date asc limit 5";
 <script src="js/jquery.js">
 </script>
 -->
-<script src="js/jquery-1.8.3.min.js">
-</script>
-<script src="js/bootstrap.min.js">
-</script>
 <script type="text/javascript" src="js/hover-dropdown.js">
 </script>
 <script defer src="js/jquery.flexslider.js">
@@ -742,16 +770,15 @@ from notams order by publish_date asc limit 5";
 <script type="text/javascript" src="js/parallax-slider/jquery.cslider.js">
 </script>
 <script type="text/javascript">
-    $(function() {
+    $(function () {
 
         $('#da-slider').cslider({
-            autoplay    : true,
-            bgincrement : 100
+            autoplay: true,
+            bgincrement: 100
         });
 
     });
 </script>
-
 
 
 <!--common script for all pages-->
@@ -759,7 +786,7 @@ from notams order by publish_date asc limit 5";
 </script>
 
 <script type="text/javascript">
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
 
         $('.bxslider1').bxSlider({
@@ -784,26 +811,26 @@ from notams order by publish_date asc limit 5";
 <script>
     $('a.info').tooltip();
 
-    $(window).load(function() {
+    $(window).load(function () {
         $('.flexslider').flexslider({
             animation: "slide",
-            start: function(slider) {
+            start: function (slider) {
                 $('body').removeClass('loading');
             }
         });
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         $("#owl-demo").owlCarousel({
 
-            items : 4
+            items: 4
 
         });
 
     });
 
-    jQuery(document).ready(function(){
+    jQuery(document).ready(function () {
         jQuery('ul.superfish').superfish();
     });
 
@@ -812,7 +839,6 @@ from notams order by publish_date asc limit 5";
 
 </script>
 
-</body>
 <script type="text/javascript" src="js/moment-with-locales.js"></script>
 <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
@@ -1065,4 +1091,6 @@ from notams order by publish_date asc limit 5";
         js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.6";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
 </html>
