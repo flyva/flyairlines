@@ -15,82 +15,166 @@
 	<title>Fly Airlines VA</title>
 	<meta charset="utf-8">
 	<meta name="keywords"
-	      content="vam, virtual airlines manager , va , ivao, vatsim , airlines manager, prepar3d, aerosoft, pmdg,virtual pilot, piloto virtual, open source,xplane, flight simulator, flight simulation, flight, flying, fsx, fs9, flight simulator x, flight simulator 2004, simulators, simulator, simulation, flight enthusiasts, fsacars, fskeeper"/>
+		  content="Fly Airlines, VA, Virtuel Airlines, Compagnie Aérenienne virtuel, IVAO, VATSIM, XPlan, P3D, Prépar3D, FSX, Avion, PLane"/>
 	<meta name="description"
-	      content="VAM Virtual Airlines Manager is  free, open source web system for flight simulation enthusiasts, allowing them to create their own virtual airlines as a real one. Full airlines administration."/>
-	<meta name="author" content="Alejandro Garcia">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel=”author” href=”https://plus.google.com/u/0/108665243705425046932/“
-	      title="Virtual Airlines Manager on Google+"/>
-	<link rel="shortcut icon" href="images/favicon.ico">
+		  content="Fly Airlines VA est une compagnie aérienne Virtuel évoluant sur principalement sur le réseau IVAO."/>
+	<meta name="author" content="Quentin R">
+	<meta name="viewport" content="width=device-width, initial-scale=1"
+	<meta name="google-site-verification" content="Z5sdNiY6xd9OuYDe4U5WbvIRk57dHqj5Fnv8K04dbSQ"/>
+
+	<link rel="author" href="https://plus.google.com/u/0/108665243705425046932/"
+		  title="Virtual Airlines Manager on Google+"/>
+	<link rel="icon" href="images/LOGOFB2.ico" type="image/png" sizes="16x16">
+	<link rel="shortcut icon" href="images/LOGOFB2.ico">
+
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-datetimepicker.min.css"/>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/theme.css" rel="stylesheet">
+	<link href="css/bootstrap-reset.css" rel="stylesheet">
+	<!-- <link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+	<!--external css-->
+	<link rel="stylesheet" href="css/flexslider.css"/>
+	<link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="assets/owlcarousel/owl.carousel.css">
+	<link rel="stylesheet" href="assets/owlcarousel/owl.theme.css">
+
+	<link href="css/superfish.css" rel="stylesheet" media="screen">
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" type="text/css" href="css/component.css">
+	<link rel="stylesheet" type="text/css" href="css/icons.css">
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/style-responsive.css" rel="stylesheet"/>
+	<link href="css/flyairlines.css" rel="stylesheet"/>
+
+	<link rel="stylesheet" type="text/css" href="css/parallax-slider/parallax-slider.css"/>
+
+
+	<script type="text/javascript" src="js/parallax-slider/modernizr.custom.28468.js">
+	</script>
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js">
+	</script>
+	<![endif]-->
+
+	<script src="js/jquery1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
 	<script src="Charts/Chart.js"></script>
 	<script src="js/vam.js" type="text/javascript"></script>
 	<script src="js/jquery.confirm.min.js" type="text/javascript"></script>
-	<!-- Custom styles for this template -->
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/social-vam.css" rel="stylesheet">
-	<link href="css/custom.css" rel="stylesheet">
+	<script src="js/boutonhaut.js" type="text/javascript"></script>
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-64212625-2', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+		(function () {
+			var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+			s1.async = true;
+			s1.src = 'https://embed.tawk.to/5782d4391ca3e686763c9fae/default';
+			s1.charset = 'UTF-8';
+			s1.setAttribute('crossorigin', '*');
+			s0.parentNode.insertBefore(s1, s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
+
 </head>
 <body>
 <?php
 	require('check_login.php');
 	include('get_pilot_data.php');
 ?>
-<nav class="navbar navbar-inverse" role=" navigation">
-	<div class="container">
+<header class="head-section">
+	<div class="navbar navbar-default navbar-static-top">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-			        aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
+			<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="./index.php">Fly Airlines</a>
+			<a class="navbar-brand" href="index.php">Fly Airlines VA</a>
 		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="./index_vam.php">Home</a></li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-						<?php echo ABOUT; ?><span class="caret"></span></a>
+
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="active"><a href="./index.php">Home</a></li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo ABOUT; ?>
+						<i class="fa fa-angle-down"></i></a>
 					<ul class="dropdown-menu">
-						<li><a href="./index_vam_op.php?page=staff"><?php echo STAFF; ?></a></li>
-						<li><a href="./index_vam_op.php?page=rules"><?php echo RULES; ?></a></li>
-						<li><a href="#"><?php echo FORUM; ?></a></li>
+						<li><a href="./index.php?page=staff"><?php echo STAFF; ?></a></li>
+						<li><a href="./index.php?page=rules"><?php echo RULES; ?></a></li>
+						<li><a href="./index.php?page=school"><?php echo SCHOOL; ?></a></li>
+						<li><a href="./index.php?page=nospartenariat"><?php echo "Nos Partenariats"; ?></a></li>
+						<li><a href="http://flyairlinesva-membres.esy.es/forum"><?php echo FORUM; ?></a></li>
+						<li><a href="./index.php?page=pilot_register"><?php echo REGISTER; ?></a></li>
 					</ul>
 				</li>
-				<li><a href="./index_vam_op.php?page=pilot_options"><?php echo MENU; ?></a></li>
-				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo OPERATIONS; ?>
-						<span class="caret"></span></a>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+										href="#"><?php echo OPERATIONS; ?>
+						<i class="fa fa-angle-down"></i>
+						<ul class="dropdown-menu">
+							<li><a href="./index.php?page=fleet_public"><?php echo FLEET; ?></a></li>
+							<li><a href="./index.php?page=route_public"><?php echo ROUTES; ?></a></li>
+							<li><a href="./index.php?page=events"><?php echo "Nos Events"; ?></a></li>
+							<li><a href="./index.php?page=hubs"><?php echo HUBS; ?></a></li>
+							<li><a href="./index.php?page=tours"><?php echo TOURS; ?></a></li>
+							<li><a href="./index.php?page=ranks"><?php echo PILOT_RANKS; ?></a></li>
+							<li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>
+							<li><a href="./index.php?page=va_global_financial_report"><?php echo GLOBAL_FINANCES; ?></a>
+							</li>
+						</ul>
+				</li>
+				<li><a href="./index.php?page=pilots_public"><?php echo PILOTS; ?></a></li>
+				<li><a href="./index.php?page=stats"><?php echo STATS; ?></a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo LANGUAGES; ?>
+						<i class="fa fa-angle-down"></i>
+					</a>
 					<ul class="dropdown-menu">
-						<li><a href="./index_vam_op.php?page=fleet_public"><?php echo FLEET; ?></a></li>
-						<li><a href="./index_vam_op.php?page=route_public"><?php echo ROUTES; ?></a></li>
-						<li><a href="./index_vam_op.php?page=hubs"><?php echo HUBS; ?></a></li>
-						<li><a href="./index_vam_op.php?page=tours"><?php echo TOURS; ?></a></li>
-						<li><a href="./index_vam_op.php?page=ranks"><?php echo PILOT_RANKS; ?></a></li>
-						<li><a href="./index_vam_op.php?page=awards"><?php echo AWARDS; ?></a></li>
-						<li><a href="./index_vam_op.php?page=va_global_financial_report"><?php echo GLOBAL_FINANCES; ?></a></li>
+						<?php echo $linklanguage; ?>
 					</ul>
 				</li>
-				<li><a href="./index_vam_op.php?page=pilots_public"><?php echo PILOTS; ?></a></li>
-				<li><a href="./index_vam_op.php?page=stats"><?php echo STATS; ?></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right"><?php if ($_SESSION["access_administration_panel"] == 1) { ?>
-				<li><a href="../vamcore/Gvausers"><span class="glyphicon glyphicon-briefcase"></span> <?php echo ADMIN; ?></a></li> <?php } ?>
+					<li><a href="../vamcore/Gvausers"><span class="glyphicon glyphicon-briefcase"></span> <?php echo ADMIN; ?></a></li> <?php } ?>
 				<li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> <?php echo 'Log out ' . $_SESSION["user"]; ?></a></li>
 			</ul>
 		</div>
 	</div>
-</nav>
+</header>
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<div id="carousel">
+				<div class="row">
+					<div class="col-md-12">
+					<div id="carousel">
 				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
