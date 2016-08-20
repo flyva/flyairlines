@@ -17,11 +17,6 @@
 		$_SESSION['languages'] = "en";
 	}
 	include("./languages/lang_" . $_SESSION['language'] . ".php");
-	$id = $_SESSION["id"];
-	if ($id == '') {
-		header("Location: ./index.php?page=nosession");
-		die();
-	}
 	include('db_login.php');
 	include('./languagesdd.php');
 	include('classes/security.php');
@@ -30,4 +25,9 @@
 	include('./main_vam.php');
 	$secure = new SECURITY();
 	$secure->parse_incoming();
+$id = $_SESSION["id"];
+if ($id == '') {
+	header("Location: ./index.php?page=nosession");
+	die();
+}
 ?>
