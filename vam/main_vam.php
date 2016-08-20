@@ -344,5 +344,30 @@ include('get_pilot_data.php');
     </div>
 </footer>
 <!--small footer end-->
+
+<script src="js/wow.min.js">
+</script>
+
+<script src="js/jquery.easing.min.js">
+</script>
+<script src="js/link-hover.js">
+</script>
+<script src="js/superfish.js">
+</script>
+
+<script>
+    $('a.info').tooltip();
+
+    jQuery(document).ready(function () {
+        jQuery('ul.superfish').superfish();
+    });
+
+    new WOW().init();
+
+
+</script>
+
 </body>
+
+
 </html>
