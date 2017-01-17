@@ -31,37 +31,29 @@
 	}
 ?>
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title"><?php echo PILOT_TOURS; ?></h3>
-			</div>
-			<div class="panel-body">
-				<div class="table-responsive">
-					<table class="table borderless">
-						<?php
-							$i=1;
-							for ($rows=1;$rows<=$numrows; $rows++)
-							{
-								echo '<tr>';
-								for ($cells=1;$cells<=$NUMCELLS;$cells++)
-								{
-									if (strlen ($medals[$i])>0)
-									{
-										echo '<td><img src="'. $medals[$i].'"></td>';
-									}
-									else
-									{
-										echo '<td></td>';
-									}
-									$i++;
-								}
-								echo '</tr>';
-							}
-						?>
-					</table>
-				</div>
-			</div>
-		</div>
+	<h3><?php echo PILOT_TOURS; ?></h3>
+	<div class="table-responsive">
+		<table class="table borderless">
+			<?php
+				$i=1;
+				for ($rows=1;$rows<=$numrows; $rows++)
+				{
+					echo '<tr>';
+					for ($cells=1;$cells<=$NUMCELLS;$cells++)
+					{
+						if (strlen ($medals[$i])>0)
+						{
+							echo '<td><img src="'. $medals[$i].'"></td>';
+						}
+						else
+						{
+							echo '<td></td>';
+						}
+						$i++;
+					}
+					echo '</tr>';
+				}
+			?>
+		</table>
 	</div>
 </div>

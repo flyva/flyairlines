@@ -12,98 +12,112 @@
 <?php
 	require('check_login.php');
 ?>
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title"><?php echo PILOT_ACTIONS; ?></h3>
+<h1 class="margbott25"><?php echo PILOT_ACTIONS; ?></h1>
+
+<div class="row">
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=mails"><img src="images/internalmail.png"></a>
+			</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_MAIL; ?></strong></p>
+			</div>
+		</div>
 	</div>
-	<div class="panel-body">
-		<div class="row">
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=mails"><img src="images/Email.png"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_MAIL; ?></strong></p>
-					</div>
-				</div>
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=route_selection_stage1"><img src="images/notebook.png"></a>
 			</div>
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=route_selection_stage1"><img src="images/Map-icon.png"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_ROUTE_RESERVE; ?></strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="#" data-toggle="modal" data-target="#JumpModal"><img src="images/Travel-Airplane-icon.png"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_CHANGE_LOCATION; ?></strong></p>
-					</div>
-				</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_ROUTE_RESERVE; ?></strong></p>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=my_bank"><img src="images/money-icon.png"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_BANK; ?></strong></p>
-					</div>
-				</div>
+	</div>
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="#" data-toggle="modal" data-target="#JumpModal"><img src="images/changelocation.png"></a>
 			</div>
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=pirep_manual_create"><img src="images/validate.png"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_MANUAL_PIREP; ?></strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=my_profile"><img
-							src="images/Occupations-Pilot-Male-Light-icon.png"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_PROFILE; ?></strong></p>
-					</div>
-				</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_CHANGE_LOCATION; ?></strong></p>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=my_stats"><img src="images/estadisticas.png"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_STATS; ?></strong></p>
-					</div>
-				</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=my_bank"><img src="images/myfinances.png"></a>
 			</div>
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=vaparameters_info"><img src="images/fmc.jpg"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_VA_PARAMETER; ?></strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=download"><img src="images/download.jpg"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_DOWNLOADS; ?></strong></p>
-					</div>
-				</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_BANK; ?></strong></p>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-4 col-sm-4">
-				<div class="thumbnail">
-					<a href="./index_vam_op.php?page=tours_pilot"><img src="images/tour.png"></a>
-					<div class="caption">
-						<p class="text-center"><strong><?php echo OPTION_TOUR; ?></strong></p>
-					</div>
-				</div>
+	</div>
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=pirep_manual_create"><img src="images/manualpirep.png"></a>
+			</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_MANUAL_PIREP; ?></strong></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=my_profile"><img src="images/user.png"></a>
+			</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_PROFILE; ?></strong></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=my_stats"><img src="images/mystats.png"></a>
+			</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_STATS; ?></strong></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=vaparameters_info"><img src="images/settings.png"></a>
+			</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_VA_PARAMETER; ?></strong></p>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=download"><img src="images/downloads.png"></a>
+			</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_DOWNLOADS; ?></strong></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4 col-sm-4">
+		<div class="thumbnail">
+			<div class="taille">
+				<a href="./index_vam_op.php?page=tours_pilot"><img src="images/reporttourleg.png"></a>
+			</div>
+			<div class="caption">
+				<p class="text-center"><strong><?php echo OPTION_TOUR; ?></strong></p>
 			</div>
 		</div>
 	</div>

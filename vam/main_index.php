@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="assets/owlcarousel/owl.carousel.css">
     <link rel="stylesheet" href="assets/owlcarousel/owl.theme.css">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+
 
     <link href="css/superfish.css" rel="stylesheet" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -128,37 +130,46 @@
                         <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="./index.php?page=staff"><?php echo STAFF; ?></a></li>
-                        <li><a href="./index.php?page=rules"><?php echo RULES; ?></a></li>
-                        <li><a href="./index.php?page=school"><?php echo SCHOOL; ?></a></li>
-                        <li><a href="./index.php?page=nospartenariat"><?php echo "Nos Partenariats"; ?></a></li>
-                        <li><a href="http://flyairlinesva-membres.esy.es/forum"><?php echo FORUM; ?></a></li>
-                        <li><a href="./index.php?page=pilot_register"><?php echo REGISTER; ?></a></li>
+                        <li><a href="./index.php?page=rules"><?php echo "Réglement"; ?></a></li>
+                        <li><a href="./index.php?page=school"><?php echo "Formations"; ?></a></li>
+                        <li><a href="./index.php?page=events"><?php echo "Events"; ?></a></li>
+                        <li class="dropdown-submenu">
+                            <a href="#" tabindex="-1">Pilotes</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="./index.php?page=pilots_public"><?php echo "Nos Pilotes"; ?></a></li>
+                                <li><a href="./index.php?page=ranks"><?php echo "Salaires et Grades"; ?></a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
-                                        href="#"><?php echo OPERATIONS; ?>
+                                        href="#"><?php echo "La compagnie"; ?>
                         <i class="fa fa-angle-down"></i>
                         <ul class="dropdown-menu">
                             <li><a href="./index.php?page=fleet_public"><?php echo FLEET; ?></a></li>
                             <li><a href="./index.php?page=route_public"><?php echo ROUTES; ?></a></li>
-                            <li><a href="./index.php?page=events"><?php echo "Nos Events"; ?></a></li>
                             <li><a href="./index.php?page=hubs"><?php echo HUBS; ?></a></li>
                             <li><a href="./index.php?page=tours"><?php echo TOURS; ?></a></li>
-                            <li><a href="./index.php?page=ranks"><?php echo PILOT_RANKS; ?></a></li>
-                            <li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>
+                            <!--<li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>-->
+                        </ul>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                                        href="#"><?php echo "Finance et Stats"; ?>
+                        <i class="fa fa-angle-down"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="./index.php?page=stats"><?php echo STATS; ?></a></li>
                             <li><a href="./index.php?page=va_global_financial_report"><?php echo GLOBAL_FINANCES; ?></a>
                             </li>
                         </ul>
                 </li>
-                <li><a href="./index.php?page=pilots_public"><?php echo PILOTS; ?></a></li>
-                <li><a href="./index.php?page=stats"><?php echo STATS; ?></a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo LANGUAGES; ?>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                                        href="#"><?php echo "Contacts"; ?>
                         <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php echo $linklanguage; ?>
-                    </ul>
+                        <ul class="dropdown-menu">
+                            <li><a href="./index.php?page=contact"><?php echo "Envoyez-nous un mail"; ?></a></li>
+                            <li><a href="http://flyairlinesva-membres.esy.es/forum"><?php echo FORUM; ?></a></li>
+                            </li>
+                        </ul>
                 </li>
             </ul>
             <?php if ($user_logged == 0) : ?>
@@ -181,6 +192,8 @@
             <?php endif; ?>
         </div>
     </div>
+    <a href="http://localhost/flyairlines/vam/index.php?lang=fr"><img class="fr" src="./images/country-flags/FR.png"></img></a>
+    <a href="http://localhost/flyairlines/vam/index.php?lang=en"><img class="bg" src="./images/country-flags/GB.png"></img></a>
 </header>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -378,88 +391,35 @@
 
         <div class="col-md-12">
             <div class="stats h-service ovh">
-                <h2><?php echo STATISTICS_VA; ?></h2>
-                <div class="col-md-3">
-                    <span class="badge bg-green wow fadeInDown">
-                        <span class="flyvaicon flyva-pilot"></span>
-                        <br/>
-                        <span class="txt"><?php echo $num_pilots; ?></span>
-                    </span>
-                    <div class="h-service-content wow fadeInUp">
-                        <p><?php echo ST_NUMPILOTS; ?></p>
+                <h2 class="Open_Sans_Light statistique"><strong><?php echo STATISTICS_VA; ?></strong></h2>
+                <div class="col-md-12">
+                    <img src="images/users.png" class="img_users img_carre"></img>
+                    <div class="carre_avion carre_yelow text_avions">
+                        <h3 class="color_white center2 Open_Sans_Light"><?php echo ST_NUMPILOTS; ?></h3>
+                        <h2 class="chiffre center2 color_white Open_Sans_Light"><?php echo $num_pilots; ?></h2>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <span class="badge bg-aqua wow fadeInDown">
-                        <span class="flyvaicon flyva-fleet"></span>
-                        <br/>
-                        <span class="txt"><?php echo $num_planes; ?></span>
-                    </span>
-                    <div class="h-service-content wow fadeInUp">
-                        <p><?php echo ST_NUMPLANES; ?></p>
+
+                    <img src="images/time.png" class="img_time img_carre"></img>
+                    <div class="carre3 carre_blue text_time">
+                        <h3 class="color_white center2 Open_Sans_Light"><?php echo "Avions"; ?></h3>
+                        <h2 class="chiffre center2 color_white Open_Sans_Light"><?php echo $num_planes; ?></h2>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <span class="badge bg-teal wow fadeInDown">
-                        <span class="flyvaicon flyva-globe"></span>
-                        <br/>
-                        <span class="txt"><?php echo $num_routes; ?></span>
-                    </span>
-                    <div class="h-service-content wow fadeInUp">
-                        <p><?php echo ST_NUMROUTES; ?></p>
+
+                    <img src="images/total_vols.png" class="img_vols_totals img_carre"></img>
+                    <div class="carre3 carre_green text_vols_totals">
+                        <h3 class="color_white center2 Open_Sans_Light"><?php echo ST_NUMROUTES; ?></h3>
+                        <h2 class="chiffre center2 color_white Open_Sans_Light"><?php echo $num_routes; ?></h2>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <span class="badge bg-red wow fadeInDown">
-                        <span class="flyvaicon flyva-wall-clock"></span>
-                        <br/>
-                        <span class="txt"><?php echo 0 + $va_hours; ?></span>
-                    </span>
-                    <div class="h-service-content wow fadeInUp">
-                        <p><?php echo PILOT_HOURS; ?></p>
+
+                    <img src="images/régulier.png" class="img_vols_regulier img_carre"></img>
+                    <div class="carre3 carre_pirpple text_vols_regulier">
+                        <h3 class="color_white center2 Open_Sans_Light"><?php echo "Heures" ?></h3>
+                        <h2 class="chiffre color_white Open_Sans_Light"><?php echo 0 + $va_hours; ?></h2>
                     </div>
                 </div>
             </div>
-            <div class="clearfix visible-lg"></div>
         </div>
 
-
-        <?php /*
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><?php echo NOTAMS_VA; ?></h3>
-                </div>
-                <div class="panel-body">
-                    <?php
-                    $db = new mysqli($db_host, $db_username, $db_password, $db_database);
-                    $db->set_charset("utf8");
-                    if ($db->connect_errno > 0) {
-                        die('Unable to connect to database [' . $db->connect_error . ']');
-                    }
-                    $sql = "select notam_id,notam_name,DATE_FORMAT(publish_date,'%d-%m-%Y') as publish_date_web ,DATE_FORMAT(publish_date,'%Y%m%d') as publish_date,DATE_FORMAT(hide_date,'%Y%m%d') as hide_date, DATE_FORMAT(now(),'%Y%m%d') as currdat 
-from notams order by publish_date asc limit 5";
-                    if (!$result = $db->query($sql)) {
-                        die('There was an error running the query [' . $db->error . ']');
-                    }
-                    ?>
-                    <table class="table table-striped">
-                        <?php
-                        echo "<tr><th>" . NOTAM_NAME . "</th><th>" . NOTAM_DATE . "</th></tr>" . $row["publish_date"];
-                        while ($row = $result->fetch_assoc()) {
-                            if (($row["publish_date"] - $row["currdat"] <= 0) && ($row["hide_date"] - $row["currdat"] > 0)) {
-                                echo '<tr><td>';
-                                echo '<a href="index.php?page=notam&notam_id=' . $row["notam_id"] . '">' . $row["notam_name"] . '</a>' . '</td><td>';
-                                echo $row["publish_date_web"] . '</td></tr>';
-                            }
-                        }
-                        ?>
-                    </table>
-                </div>
-            </div>
-            <div class="clearfix visible-lg"></div>
-        </div>
-        */ ?>
         <div class="hr">
             <span class="hr-inner"></span>
         </div>
@@ -467,11 +427,11 @@ from notams order by publish_date asc limit 5";
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>LE STAFF</h2>
+                        <h2><strong>LE STAFF</strong></h2>
                     </div>
                     <div class="col-md-3">
                         <div class="h-service">
-                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown pad2">
                                 <span class="flyva-ceo"></span>
                             </div>
                             <div class="h-service-content wow fadeInUp">
@@ -489,7 +449,7 @@ from notams order by publish_date asc limit 5";
                     </div>
                     <div class="col-md-3">
                         <div class="h-service">
-                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown pad2">
                                 <span class="flyva-artistic-brush"></span>
                             </div>
                             <div class="h-service-content wow fadeInUp">
@@ -511,7 +471,7 @@ from notams order by publish_date asc limit 5";
                     </div>
                     <div class="col-md-3">
                         <div class="h-service">
-                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown pad2">
                                 <span class="flyva-route"></span>
                             </div>
                             <div class="h-service-content wow fadeInUp">
@@ -529,7 +489,7 @@ from notams order by publish_date asc limit 5";
                     </div>
                     <div class="col-md-3">
                         <div class="h-service">
-                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown">
+                            <div class="icon-wrap ico-bg round-fifty wow fadeInDown pad2">
                                 <span class="flyva-eventl"></span>
                             </div>
                             <div class="h-service-content wow fadeInUp">
@@ -555,10 +515,50 @@ from notams order by publish_date asc limit 5";
         </div>
 
         <div class="container">
+
+            <div class="col-md-16">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo "Nos Actualitées"; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <?php
+                        $db = new mysqli($db_host, $db_username, $db_password, $db_database);
+                        $db->set_charset("utf8");
+                        if ($db->connect_errno > 0) {
+                            die('Unable to connect to database [' . $db->connect_error . ']');
+                        }
+                        $sql = "select notam_id,notam_name,DATE_FORMAT(publish_date,'%d-%m-%Y') as publish_date_web ,DATE_FORMAT(publish_date,'%Y%m%d') as publish_date,DATE_FORMAT(hide_date,'%Y%m%d') as hide_date, DATE_FORMAT(now(),'%Y%m%d') as currdat 
+from notams order by publish_date asc limit 5";
+                        if (!$result = $db->query($sql)) {
+                            die('There was an error running the query [' . $db->error . ']');
+                        }
+                        ?>
+                        <table class="table table-striped">
+                            <?php
+                            echo "<tr><th>" . "INFO" . "</th><th>" . NOTAM_DATE . "</th></tr>" . $row["publish_date"];
+                            while ($row = $result->fetch_assoc()) {
+                                if (($row["publish_date"] - $row["currdat"] <= 0) && ($row["hide_date"] - $row["currdat"] > 0)) {
+                                    echo '<tr><td>';
+                                    echo '<a href="index.php?page=notam&notam_id=' . $row["notam_id"] . '">' . $row["notam_name"] . '</a>' . '</td><td>';
+                                    echo $row["publish_date_web"] . '</td></tr>';
+                                }
+                            }
+                            ?>
+                        </table>
+                    </div>
+                </div>
+                <div class="clearfix visible-lg"></div>
+            </div>
+
+            <div class="hr">
+                <span class="hr-inner"></span>
+            </div>
+
             <div class="row mar-b-50 our-clients">
                 <div class="col-md-3">
                     <h2>
-                        Nos Partenaires
+                        <strong>Nos Partenaires</strong>
                     </h2>
                     <a href="nospartenariat.php">
                         <u>Tous nos partenariats</u>
@@ -581,8 +581,6 @@ from notams order by publish_date asc limit 5";
                         <li>
                             <a href="#">
                                 <img src="images/favi1.png" alt=""/>
-
-                                <img src="images/favi1.png" class="color-img" alt=""/>
                             </a>
                         </li>
                         <li>
@@ -688,19 +686,19 @@ if (!isset($_GET["page"]) || trim($_GET["page"]) == "") {
                     <ul class="page-footer-list">
                         <li>
                             <i class="fa fa-angle-right"></i>
-                            <a href="about.html">About Us</a>
+                            <a href="./index.php?page=about-us">About Us</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
-                            <a href="faq.html">Support</a>
+                            <a href="./index.php?page=support">Support</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
-                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <a href="./index.php?page=rules">Réglement</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
-                            <a href="terms.html">Term & condition</a>
+                            <a href="./index.php?page=nospartenariat">Partenariats</a>
                         </li>
                     </ul>
                 </div>
@@ -710,7 +708,8 @@ if (!isset($_GET["page"]) || trim($_GET["page"]) == "") {
                     <h1>
                     </h1>
                     <p>
-                    <h1>Fly Airline,</h1>la compagnie Simple, Jeune, et Dynamique.
+                    <h1>Fly Airline,</h1>
+                      La compagnie Simple, Jeune, et Dynamique.
                     </p>
                 </div>
             </div>

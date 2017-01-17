@@ -36,29 +36,21 @@ if (!$result = $db->query($sql)) {
 
 
 <div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?php echo "Les Events"?></h3>
-            </div>
-            <div class="panel-body">
-                <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=na7g3v3olpd4fadidd0agm84i8%40group.calendar.google.com&amp;color=%23711616&amp;ctz=Europe%2FParis" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
+    <h1><?php echo "EVENEMENT"?></h1>
 
-                <!-- Table -->
-                <table>
-                    <?php while ($row = $result->fetch_assoc()) : ?>
-                        <p><b><u>Nom Event</b></u> : <? echo $row["event_name"]; ?></p>
-                        <p><b><u>Date Event</b></u> :<? echo $row["publish_date"]; ?></p>
-                        <p><b><u>Description</b></u> : <? echo $row["event_text"]; ?></p>
-                        <hr />
-                    <?php endwhile; ?>
-                    <?php $db->close(); ?>
-                </table>
-            </div>
-        </div>
+    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=na7g3v3olpd4fadidd0agm84i8%40group.calendar.google.com&amp;color=%23711616&amp;ctz=Europe%2FParis" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+    <div class="col-md-12">
+        <!-- Table -->
+        <table>
+            <?php while ($row = $result->fetch_assoc()) : ?>
+                <p><b><u>Nom Event</b></u> : <? echo $row["event_name"]; ?></p>
+                <p><b><u>Date Event</b></u> :<? echo $row["publish_date"]; ?></p>
+                <p><b><u>Description</b></u> : <? echo $row["event_text"]; ?></p>
+                <hr />
+            <?php endwhile; ?>
+            <?php $db->close(); ?>
+        </table>
+    </div>
+</div>
+</div>

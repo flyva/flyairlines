@@ -24,55 +24,51 @@
 	die('There was an error running the query [' . $db->error . ']');
 }?>
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading">
-				<?php echo PILOT_ROSTER . ' ' . $va_name; ?>
-			</div>
-			<div class="table-responsive">
-				<!-- Table -->
-				<table class="table table-hover">
-					<?php echo "<tr><th>" . CALLSIGN . " </th><th>" . NAME . "</th><th>" . HUB . "</th><th>" . LOCATION . "</th><th>" . HOURS . "</th><th>" . RANK . "</th><th>" . COUNTRY . "</th><th>" . STATUS . "</th>";
-						if ($ivao == 1) echo '<th>' . IVAOID . '</th>';
-						if ($vatsim == 1) echo '<th>' . VATSIMID . '</th>';
-						echo "</tr>";
-						while ($row = $result->fetch_assoc()) {
-						echo "
-                            <td>";
-						echo '<a href="./index.php?page=pilot_details&pilot_id=' . $row["gvauser_id"] . '">' . $row["callsign"] . '</a>
-                            </td>
-                            <td>';
-						echo $row["name"] . ' ' . $row["surname"] . '</td>
-                            <td>';
-						echo $row["hub"] . '</td>
-                            <td>';
-						echo $row["location"] . '</td>
-                            <td>';
-						echo round($row["gva_hours"] , 2) + round($row["transfered_hours"] , 2) . '</td>
-                            <td>';
-						if (strlen($row["rank_image"]) > 0) {
-							echo '<img src="' . $row["rank_image"] . '">' . ' ';
-						}
-						echo $row["rank"] . '</td>
-                            <td>';;
-						echo '<img src="./images/country-flags/' . $row["iso2"] . '.png" alt="' . $row["iso2"] . '">' . ' ' . $row["short_name"] . '</td>
-                            <td>';
-						if ($row["activation"] == 1) echo '<img src="./images/green-user-icon.png" height="25" width="25" </td>'; else echo '<img src="./images/red-user-icon.png" height="25" width="25" </td>';
-						if ($ivao == 1) {
-							echo '
-                                <td><a href="https://www.ivao.aero/Member.aspx?ID=' . $row["ivaovid"] . '">' . $row["ivaovid"] . '</a>
-                                </td>';
-						}
-						if ($vatsim == 1) {
-							echo '
-                                <td><a href="http://www.vataware.com/pilot/' . $row["vatsimid"] . '">' . $row["vatsimid"] . '</a>
-                                </td>';
-						}
-						echo '</tr>';
-					} $db->close(); ?> </table>
-			</div>
+	<h1 class="margbott25">PILOTES</h1>
+
+	<div class="table-responsive">
+		<!-- Table -->
+		<table class="table table-hover">
+			<?php echo "<tr><th>" . CALLSIGN . " </th><th>" . NAME . "</th><th>" . HUB . "</th><th>" . LOCATION . "</th><th>" . HOURS . "</th><th>" . RANK . "</th><th>" . COUNTRY . "</th><th>" . STATUS . "</th>";
+				if ($ivao == 1) echo '<th>' . IVAOID . '</th>';
+				if ($vatsim == 1) echo '<th>' . VATSIMID . '</th>';
+				echo "</tr>";
+				while ($row = $result->fetch_assoc()) {
+				echo "
+					<td>";
+				echo '<a href="./index.php?page=pilot_details&pilot_id=' . $row["gvauser_id"] . '">' . $row["callsign"] . '</a>
+					</td>
+					<td>';
+				echo $row["name"] . ' ' . $row["surname"] . '</td>
+					<td>';
+				echo $row["hub"] . '</td>
+					<td>';
+				echo $row["location"] . '</td>
+					<td>';
+				echo round($row["gva_hours"] , 2) + round($row["transfered_hours"] , 2) . '</td>
+					<td>';
+				if (strlen($row["rank_image"]) > 0) {
+					echo '<img src="' . $row["rank_image"] . '">' . ' ';
+				}
+				echo $row["rank"] . '</td>
+					<td>';;
+				echo '<img src="./images/country-flags/' . $row["iso2"] . '.png" alt="' . $row["iso2"] . '">' . ' ' . $row["short_name"] . '</td>
+					<td>';
+				if ($row["activation"] == 1) echo '<img src="./images/green-user-icon.png" height="25" width="25" </td>'; else echo '<img src="./images/red-user-icon.png" height="25" width="25" </td>';
+				if ($ivao == 1) {
+					echo '
+						<td><a href="https://www.ivao.aero/Member.aspx?ID=' . $row["ivaovid"] . '">' . $row["ivaovid"] . '</a>
+						</td>';
+				}
+				if ($vatsim == 1) {
+					echo '
+						<td><a href="http://www.vataware.com/pilot/' . $row["vatsimid"] . '">' . $row["vatsimid"] . '</a>
+						</td>';
+				}
+				echo '</tr>';
+			} $db->close(); ?> </table>
 		</div>
 	</div>
 	<div class="clearfix visible-lg"></div>
+</div>
 </div>

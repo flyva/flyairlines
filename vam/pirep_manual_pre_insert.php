@@ -45,79 +45,75 @@
 	}
 	?>
 		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading"><?php echo MANUAL_PIREP; ?></div>
-					<form class="form-horizontal" id="confirm-pirep" action="./index_vam_op.php?page=pirep_manual_insert" 					      role="form" method="post">
+			<h1 class="margbott25"><?php echo MANUAL_PIREP; ?></h1>
+			<form class="form-horizontal" id="confirm-pirep" action="./index_vam_op.php?page=pirep_manual_insert" 					      role="form" method="post">
 
-						<table class="table table-hover">
+				<table class="table table-hover">
 
-						<tr>
-							<td><strong>
-								<input name="flight_date" type="hidden" value="<?php echo $flight_date; ?>">
-								<?php echo MANUAL_PIREP_DATE; ?></strong></td>
-							<td><?php echo $flight_date; ?></td>
+				<tr>
+					<td><strong>
+						<input name="flight_date" type="hidden" value="<?php echo $flight_date; ?>">
+						<?php echo MANUAL_PIREP_DATE; ?></strong></td>
+					<td><?php echo $flight_date; ?></td>
 
-							<td><strong>
-								<input name="departure" type="hidden" value="<?php echo $from_airport; ?>">
-								<?php echo MANUAL_PIREP_DEP; ?></strong></td>
-							<td><?php echo $from_airport; ?></td>
+					<td><strong>
+						<input name="departure" type="hidden" value="<?php echo $from_airport; ?>">
+						<?php echo MANUAL_PIREP_DEP; ?></strong></td>
+					<td><?php echo $from_airport; ?></td>
 
-							<td><strong>
-								<input name="arrival" type="hidden" value="<?php echo $to_airport; ?>">
-								<?php echo MANUAL_PIREP_ARR; ?></strong></td>
-							<td><?php echo $to_airport ; ?></td>
+					<td><strong>
+						<input name="arrival" type="hidden" value="<?php echo $to_airport; ?>">
+						<?php echo MANUAL_PIREP_ARR; ?></strong></td>
+					<td><?php echo $to_airport ; ?></td>
 
-							<td><strong><?php echo MANUAL_PIREP_FLIGHT_TYPE; ?></strong></td>
-							<td><?php if ($charter == 0) {
-									echo MANUAL_PIREP_REG;
-								} else {
-									echo MANUAL_PIREP_CHARTER;
-								} ?></td>
-						</tr>
-						<tr>
-							<td><strong>
-								<input name="duration" type="hidden" value="<?php echo $duration; ?>">
-								<?php echo MANUAL_PIREP_TIME; ?></strong></td>
-							<td><?php echo $duration; ?></td>
+					<td><strong><?php echo MANUAL_PIREP_FLIGHT_TYPE; ?></strong></td>
+					<td><?php if ($charter == 0) {
+							echo MANUAL_PIREP_REG;
+						} else {
+							echo MANUAL_PIREP_CHARTER;
+						} ?></td>
+				</tr>
+				<tr>
+					<td><strong>
+						<input name="duration" type="hidden" value="<?php echo $duration; ?>">
+						<?php echo MANUAL_PIREP_TIME; ?></strong></td>
+					<td><?php echo $duration; ?></td>
 
-							<td><strong>
-								<input name="distance" type="hidden" value="<?php echo $distance; ?>">
-								<?php echo MANUAL_PIREP_DISTANCE; ?></strong></td>
-							<td><?php echo $distance; ?></td>
+					<td><strong>
+						<input name="distance" type="hidden" value="<?php echo $distance; ?>">
+						<?php echo MANUAL_PIREP_DISTANCE; ?></strong></td>
+					<td><?php echo $distance; ?></td>
 
-							<td><strong>
-								<input name="fuel" type="hidden" value="<?php echo $fuel; ?>">
-								<?php echo MANUAL_PIREP_FUEL; ?></strong></td>
-							<td><?php echo $fuel; ?></td>
+					<td><strong>
+						<input name="fuel" type="hidden" value="<?php echo $fuel; ?>">
+						<?php echo MANUAL_PIREP_FUEL; ?></strong></td>
+					<td><?php echo $fuel; ?></td>
 
-							<td><strong>
-								<input name="plane" type="hidden" value="<?php echo $plane; ?>">
-								<input name="notes" type="hidden" value="<?php echo $comment; ?>">
-								<?php echo MANUAL_PIREP_AIRCRAFT; ?></strong></td>
-							<td><?php echo $plane; ?></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
-										<button type="submit"
-								        class="btn btn-success"><?php echo MANUAL_PIREP_CONFIRM_BTN;?></button>
-									</div>
-								</div>
-							</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</table>
-					</form>
-				</div>
-			</div>
+					<td><strong>
+						<input name="plane" type="hidden" value="<?php echo $plane; ?>">
+						<input name="notes" type="hidden" value="<?php echo $comment; ?>">
+						<?php echo MANUAL_PIREP_AIRCRAFT; ?></strong></td>
+					<td><?php echo $plane; ?></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit"
+								class="btn btn-success"><?php echo MANUAL_PIREP_CONFIRM_BTN;?></button>
+							</div>
+						</div>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			</form>
 		</div>
 		<?php
 		$db->close();

@@ -77,359 +77,283 @@
 
 <div class="row">
 
-	<div class="col-md-12">
+	<<h1 class="margbott25"><?php echo FSKEEPER_TRACK; ?></h1>
 
-		<div class="panel panel-default">
+	<?php
 
-			<div class="panel-heading"><?php echo FSKEEPER_TRACK; ?></div>
+		if (!$result = $db->query($sql)) {
 
+			die('There was an error running the query  [' . $db->error . ']');
 
+		}
 
-			<?php
+		while ($row = $result->fetch_assoc()) {
+			$IDPIREP=$row["IDPIREP"];
 
-				if (!$result = $db->query($sql)) {
+	?>
 
-					die('There was an error running the query  [' . $db->error . ']');
+	<table class="table table-hover">
 
-				}
+		<tr>
 
-				while ($row = $result->fetch_assoc()) {
-					$IDPIREP=$row["IDPIREP"];
+			<td><strong><?php echo FSKEEPER_PILOT; ?></strong></td>
 
-			?>
+			<td><?php echo $row["PilotName"]; ?></td>
 
-			<table class="table table-hover">
+			<td><strong><?php echo FSKEEPER_AIRCRAFT; ?></strong></td>
 
-				<tr>
+			<td><?php echo $row["AircraftType"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_PILOT; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_DISTANCE; ?></strong></td>
 
-					<td><?php echo $row["PilotName"]; ?></td>
+			<td><?php echo $row["DistanceFlight"] . 'NM'; ?></td>
 
-					<td><strong><?php echo FSKEEPER_AIRCRAFT; ?></strong></td>
+		</tr>
 
-					<td><?php echo $row["AircraftType"]; ?></td>
+		<tr>
 
-					<td><strong><?php echo FSKEEPER_DISTANCE; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_DEPARTURE; ?></strong></td>
 
-					<td><?php echo $row["DistanceFlight"] . 'NM'; ?></td>
+			<td><?php echo $row["OriginAirport"]; ?></td>
 
-				</tr>
+			<td><strong><?php echo FSKEEPER_ARRIVAL; ?></strong></td>
 
-				<tr>
+			<td><?php echo $row["DestinationAirport"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_DEPARTURE; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_TIME; ?></strong></td>
 
-					<td><?php echo $row["OriginAirport"]; ?></td>
+			<td><?php echo $row["FlightTime"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_ARRIVAL; ?></strong></td>
+		</tr>
 
-					<td><?php echo $row["DestinationAirport"]; ?></td>
+		<tr>
 
-					<td><strong><?php echo FSKEEPER_TIME; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_VALIDATED; ?></strong></td>
 
-					<td><?php echo $row["FlightTime"]; ?></td>
+			<td><?php if ($row["validated"] == '1') {
 
-				</tr>
+					echo FSKEEPER_STATUS_VALIDATED;
 
-				<tr>
+				} elseif
 
-					<td><strong><?php echo FSKEEPER_VALIDATED; ?></strong></td>
+					($row["validated"] == '2'){
 
-					<td><?php if ($row["validated"] == '1') {
+					echo FSKEEPER_STATUS_REJECTED;
 
-							echo FSKEEPER_STATUS_VALIDATED;
+				} else {
 
-						} elseif
+					echo FSKEEPER_STATUS_NOVALIDATED;
 
-							($row["validated"] == '2'){
+				} ?></td>
 
-							echo FSKEEPER_STATUS_REJECTED;
+			<td><strong><?php echo FSKEEPER_TYPE; ?></strong></td>
 
-						} else {
+			<td><?php if ($row["charter"] == '1') {
 
-							echo FSKEEPER_STATUS_NOVALIDATED;
+					echo FSKEEPER_FLIGHT_CHARTER;
 
-						} ?></td>
+				} else {
 
-					<td><strong><?php echo FSKEEPER_TYPE; ?></strong></td>
+					echo FSKEEPER_FLIGHT_REGULAR;
 
-					<td><?php if ($row["charter"] == '1') {
+				} ?></td>
 
-							echo FSKEEPER_FLIGHT_CHARTER;
+			<td><strong><?php echo FSKEEPER_REGISTRY; ?></strong></td>
 
-						} else {
+			<td><?php echo $row["TailNumber"]; ?></td>
 
-							echo FSKEEPER_FLIGHT_REGULAR;
+		</tr>
 
-						} ?></td>
+		<tr>
 
-					<td><strong><?php echo FSKEEPER_REGISTRY; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_DEPARTURE_SID; ?></strong></td>
 
-					<td><?php echo $row["TailNumber"]; ?></td>
+			<td><?php echo $row["SID"]; ?></td>
 
-				</tr>
+			<td><strong><?php echo FSKEEPER_DEPARTURE_RWY; ?></strong></td>
 
-				<tr>
+			<td><?php echo $row["OriginRunway"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_DEPARTURE_SID; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_DEPARTURE_TRANS; ?></strong></td>
 
-					<td><?php echo $row["SID"]; ?></td>
+			<td><?php echo $row["OriginTA"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_DEPARTURE_RWY; ?></strong></td>
+		</tr>
 
-					<td><?php echo $row["OriginRunway"]; ?></td>
+		<tr>
 
-					<td><strong><?php echo FSKEEPER_DEPARTURE_TRANS; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_ARRIVAL_SID; ?></strong></td>
 
-					<td><?php echo $row["OriginTA"]; ?></td>
+			<td><?php echo $row["STAR"]; ?></td>
 
-				</tr>
+			<td><strong><?php echo FSKEEPER_ARRIVAL_RWY; ?></strong></td>
 
-				<tr>
+			<td><?php echo $row["DestinationRunway"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_ARRIVAL_SID; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_ARRIVAL_TRANS; ?></strong></td>
 
-					<td><?php echo $row["STAR"]; ?></td>
+			<td><?php echo $row["DestinationTA"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_ARRIVAL_RWY; ?></strong></td>
+		</tr>
 
-					<td><?php echo $row["DestinationRunway"]; ?></td>
+		<tr>
 
-					<td><strong><?php echo FSKEEPER_ARRIVAL_TRANS; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_ZFW; ?></strong></td>
 
-					<td><?php echo $row["DestinationTA"]; ?></td>
+			<td><?php echo $row["ZFW"]; ?></td>
 
-				</tr>
+			<td><strong><?php echo FSKEEPER_BFUEL; ?></strong></td>
 
-				<tr>
+			<td><?php echo $row["BlockFuel"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_ZFW; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_FFUEL; ?></strong></td>
 
-					<td><?php echo $row["ZFW"]; ?></td>
+			<td><?php echo $row["FlightFuel"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_BFUEL; ?></strong></td>
+		</tr>
 
-					<td><?php echo $row["BlockFuel"]; ?></td>
+		<tr>
 
-					<td><strong><?php echo FSKEEPER_FFUEL; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_PASSENGERS; ?></strong></td>
 
-					<td><?php echo $row["FlightFuel"]; ?></td>
+			<td><?php echo $row["Passenger"]; ?></td>
 
-				</tr>
+			<td><strong><?php echo FSKEEPER_CARGO; ?></strong></td>
 
-				<tr>
+			<td><?php echo $row["Cargo"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_PASSENGERS; ?></strong></td>
+			<td><strong><?php echo FSKEEPER_ALTERNATE; ?></strong></td>
 
-					<td><?php echo $row["Passenger"]; ?></td>
+			<td><?php echo $row["AlternateAirport"]; ?></td>
 
-					<td><strong><?php echo FSKEEPER_CARGO; ?></strong></td>
+		</tr>
 
-					<td><?php echo $row["Cargo"]; ?></td>
+	</table>
 
-					<td><strong><?php echo FSKEEPER_ALTERNATE; ?></strong></td>
+	<h1 class="margbott25"><?php echo PILOT_FSKEEPER_VALIDATOR; ?></h1>
 
-					<td><?php echo $row["AlternateAirport"]; ?></td>
+	<table class="table table-hover">
 
-				</tr>
+		<tr>
 
-			</table>
+			<td><strong><?php echo VAMACARS_VALIDATOR_COMMENTS; ?></strong></td>
 
-			<br>
+			<td><?php echo $row["validator_comments"]; ?></td>
 
-		</div>
+		</tr>
 
-	</div>
+	</table>
+
+
+	<h1 class="margbott25"><?php echo FSKEEPER_LANDING_ANALYSIS; ?></h1>
+
+	<table class="table table-hover">
+
+		<tr>
+
+			<td><strong><?php echo FSKEEPER_LANDVS; ?></strong></td>
+
+			<td><?php echo $row["LandingVS"] . ' ft/min'; ?></td>
+
+			<td><strong><?php echo FSKEEPER_LANDIAS; ?></strong></td>
+
+			<td><?php echo $row["LandingIAS"] . ' kt'; ?></td>
+
+		</tr>
+
+	</table>
+
+	<h1 class="margbott25"><?php echo FLIGHT_FINANCES; ?></h1>
+
+	<tr>
+		<?php
+		$vamflightid = 	$IDPIREP;
+		include ('flight_financial_report.php');
+		?>
+	</tr>
+
+	<h1 class="margbott25"><?php echo FSKEEPER_ROUTE; ?></h1>
+
+	<table class="table table-hover">
+
+		<tr>
+
+			<td><strong><?php echo FSKEEPER_PILOT; ?></strong></td>
+
+			<td><?php echo $row["FlightPlan"]; ?></td>
+
+
+
+		</tr>
+
+
+
+	</table>
+
+	<h1 class="margbott25"><?php echo FSKEEPER_CRITIQUE; ?></h1>
+
+	<table class="table table-hover">
+
+		<tr>
+
+			<td><?php echo FSKEEPER_SCORE . ' ' . $row["FlightScore"]; ?></td>
+
+		</tr>
+
+		<tr>
+
+			<td><?php echo $row["FlightCritique"]; ?></td>
+
+		</tr>
+
+	</table>
+
+
+
+
+	<h1 class="margbott25"><?php echo FSKEEPER_MAPS; ?></h1>
+
+	<table class="table table-hover">
+
+		<tr>
+
+			<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapJPG"]  ?>"></td>
+
+		</tr>
+
+		<tr>
+
+			<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapWeatherJPG"]  ?>"></td>
+
+		</tr>
+
+		<tr>
+
+			<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapTaxiOutJPG"]  ?>"></td>
+
+		</tr>
+
+		<tr>
+
+			<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapTaxiInJPG"]  ?>"></td>
+
+		</tr>
+
+		<tr>
+
+			<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapVerticalProfileJPG"]  ?>"></td>
+
+		</tr>
+
+		<tr>
+
+			<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapLandingProfileJPG"]  ?>"></td>
+
+		</tr>
+
+	</table>
 
 </div>
-
-	<div class="row">
-
-		<div class="col-md-12">
-
-			<div class="panel panel-default">
-
-				<div class="panel-heading"><?php echo PILOT_FSKEEPER_VALIDATOR; ?></div>
-
-				<table class="table table-hover">
-
-					<tr>
-
-						<td><strong><?php echo VAMACARS_VALIDATOR_COMMENTS; ?></strong></td>
-
-						<td><?php echo $row["validator_comments"]; ?></td>
-
-					</tr>
-
-				</table>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div class="row">
-
-		<div class="col-md-12">
-
-			<div class="panel panel-default">
-
-				<div class="panel-heading"><?php echo FSKEEPER_LANDING_ANALYSIS; ?></div>
-
-				<table class="table table-hover">
-
-					<tr>
-
-						<td><strong><?php echo FSKEEPER_LANDVS; ?></strong></td>
-
-						<td><?php echo $row["LandingVS"] . ' ft/min'; ?></td>
-
-						<td><strong><?php echo FSKEEPER_LANDIAS; ?></strong></td>
-
-						<td><?php echo $row["LandingIAS"] . ' kt'; ?></td>
-
-					</tr>
-
-				</table>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-heading"><?php echo FLIGHT_FINANCES; ?></div>
-				
-					<tr>
-						<?php	
-						$vamflightid = 	$IDPIREP;				
-						include ('flight_financial_report.php');
-						?>
-					</tr>				
-			</div>
-		</div>
-	</div>	
-
-	<div class="row">
-
-		<div class="col-md-12">
-
-			<div class="panel panel-default">
-
-				<div class="panel-heading"><?php echo FSKEEPER_ROUTE; ?></div>
-
-				<table class="table table-hover">
-
-					<tr>
-
-						<td><strong><?php echo FSKEEPER_PILOT; ?></strong></td>
-
-						<td><?php echo $row["FlightPlan"]; ?></td>
-
-
-
-					</tr>
-
-
-
-				</table>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div class="row">
-
-		<div class="col-md-12">
-
-			<div class="panel panel-default">
-
-				<div class="panel-heading"><?php echo FSKEEPER_CRITIQUE; ?></div>
-
-				<table class="table table-hover">
-
-					<tr>
-
-						<td><?php echo FSKEEPER_SCORE . ' ' . $row["FlightScore"]; ?></td>
-
-					</tr>
-
-					<tr>
-
-						<td><?php echo $row["FlightCritique"]; ?></td>
-
-					</tr>
-
-				</table>
-
-			</div>
-
-		</div>
-
-	</div>
-
-
-
-	<div class="row">
-
-		<div class="col-md-12">
-
-			<div class="panel panel-default">
-
-				<div class="panel-heading"><?php echo FSKEEPER_MAPS; ?></div>
-
-				<table class="table table-hover">
-
-					<tr>
-
-						<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapJPG"]  ?>"></td>
-
-					</tr>
-
-					<tr>
-
-						<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapWeatherJPG"]  ?>"></td>
-
-					</tr>
-
-					<tr>
-
-						<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapTaxiOutJPG"]  ?>"></td>
-
-					</tr>
-
-					<tr>
-
-						<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapTaxiInJPG"]  ?>"></td>
-
-					</tr>
-
-					<tr>
-
-						<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapVerticalProfileJPG"]  ?>"></td>
-
-					</tr>
-
-					<tr>
-
-						<td><img src="<?php echo 'FSFK/Images/PIREP/'.$row["FlightMapLandingProfileJPG"]  ?>"></td>
-
-					</tr>
-
-				</table>
-
-			</div>
-
-		</div>
-
-	</div>
 
 <?php
 

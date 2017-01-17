@@ -27,29 +27,24 @@
 ?>
 
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading"><?php echo RANK_PANEL; ?></div>
-			<div class="table-responsive">
-			<!-- Table -->
-			<table class="table table-hover">
-				<?php
-					echo "<tr><th>" . RANK . "</th><th>" . RANK_IMAGE . "</th><th>" . RANK_MIN_HOURS . "</th><th>" . RANK_MAX_HOURS . "</th><th>" . PILOT_SALARY . "</th></tr>";
-					while ($row = $result->fetch_assoc()) {
-						echo "<td>";
-						echo $row["rank"] . '</td><td>';
-						echo '<IMG src="'.$row["image_url"].'" ALT="">'. '</td><td>';
-						echo $row["minimum_hours"] . '</td><td>';
-						echo $row["maximum_hours"] . '</td><td>';
-						echo $row["salary_hour"] . '</td><td></tr>';
-					}
-					$db->close();
-				?>
-			</table>
-			</div>
-		</div>
+	<div class="table-responsive">
+	<!-- Table -->
+		<h1 class="margbott25">Rang et Salaires</h1>
+	<table class="table table-hover">
+		<?php
+			echo "<tr><th>" . RANK . "</th><th>" . RANK_IMAGE . "</th><th>" . RANK_MIN_HOURS . "</th><th>" . RANK_MAX_HOURS . "</th><th>" . PILOT_SALARY . "</th></tr>";
+			while ($row = $result->fetch_assoc()) {
+				echo "<td>";
+				echo $row["rank"] . '</td><td>';
+				echo '<IMG src="'.$row["image_url"].'" ALT="">'. '</td><td>';
+				echo $row["minimum_hours"] . '</td><td>';
+				echo $row["maximum_hours"] . '</td><td>';
+				echo $row["salary_hour"] . '</td><td></tr>';
+			}
+			$db->close();
+		?>
+	</table>
 	</div>
-
 	<div class="clearfix visible-lg"></div>
+</div>
 </div>

@@ -118,29 +118,6 @@
 
 ?>
 
-<nav class="navbar navbar-inverse" role=" navigation">
-
-<div class="container">
-
-	<div class="navbar-header">
-
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-
-		        aria-expanded="false" aria-controls="navbar">
-
-			<span class="sr-only">Toggle navigation</span>
-
-			<span class="icon-bar"></span>
-
-			<span class="icon-bar"></span>
-
-			<span class="icon-bar"></span>
-
-		</button>
-
-		<a class="navbar-brand" href="./index.php">Virtual Airlines Manager</a>
-
-	</div>
 
 	<header class="head-section">
 		<div class="navbar navbar-default navbar-static-top">
@@ -162,38 +139,36 @@
 							<i class="fa fa-angle-down"></i></a>
 						<ul class="dropdown-menu">
 							<li><a href="./index.php?page=staff"><?php echo STAFF; ?></a></li>
-							<li><a href="./index.php?page=rules"><?php echo RULES; ?></a></li>
-							<li><a href="./index.php?page=school"><?php echo SCHOOL; ?></a></li>
-							<li><a href="./index.php?page=nospartenariat"><?php echo "Nos Partenariats"; ?></a></li>
+							<li><a href="./index.php?page=rules"><?php echo "Réglement"; ?></a></li>
+							<li><a href="./index.php?page=school"><?php echo "Formations"; ?></a></li>
+							<li><a href="./index.php?page=ranks"><?php echo "Salaires et Grades"; ?></a></li>
 							<li><a href="http://flyairlinesva-membres.esy.es/forum"><?php echo FORUM; ?></a></li>
-							<li><a href="./index.php?page=pilot_register"><?php echo REGISTER; ?></a></li>
 						</ul>
 					</li>
+					<li><a href="./index_vam_op.php?page=pilot_options"><?php echo MENU; ?></a></li>
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
-											href="#"><?php echo OPERATIONS; ?>
+											href="#"><?php echo "La compagnie"; ?>
 							<i class="fa fa-angle-down"></i>
 							<ul class="dropdown-menu">
 								<li><a href="./index.php?page=fleet_public"><?php echo FLEET; ?></a></li>
 								<li><a href="./index.php?page=route_public"><?php echo ROUTES; ?></a></li>
-								<li><a href="./index.php?page=events"><?php echo "Nos Events"; ?></a></li>
+								<li><a href="./index.php?page=pilots_public"><?php echo "Pilotes"; ?></a></li>
+								<li><a href="./index.php?page=events"><?php echo "Events"; ?></a></li>
 								<li><a href="./index.php?page=hubs"><?php echo HUBS; ?></a></li>
 								<li><a href="./index.php?page=tours"><?php echo TOURS; ?></a></li>
-								<li><a href="./index.php?page=ranks"><?php echo PILOT_RANKS; ?></a></li>
-								<li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>
+								<!--<li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>-->
+							</ul>
+					</li>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+											href="#"><?php echo "Finance et Vols"; ?>
+							<i class="fa fa-angle-down"></i>
+							<ul class="dropdown-menu">
+								<li><a href="./index.php?page=stats"><?php echo STATS; ?></a></li>
 								<li><a href="./index.php?page=va_global_financial_report"><?php echo GLOBAL_FINANCES; ?></a>
 								</li>
 							</ul>
 					</li>
-					<li><a href="./index.php?page=pilots_public"><?php echo PILOTS; ?></a></li>
-					<li><a href="./index.php?page=stats"><?php echo STATS; ?></a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo LANGUAGES; ?>
-							<i class="fa fa-angle-down"></i>
-						</a>
-						<ul class="dropdown-menu">
-							<?php echo $linklanguage; ?>
-						</ul>
-					</li>
+					<li><a href="./index.php?page=contact"><?php echo "Contact"; ?></a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right"><?php if ($_SESSION["access_administration_panel"] == 1) { ?>
 						<li><a href="../vamcore/Gvausers"><span class="glyphicon glyphicon-briefcase"></span> <?php echo ADMIN; ?></a></li> <?php } ?>
@@ -202,52 +177,52 @@
 			</div>
 		</div>
 </nav>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<div id="carousel">
-				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-					<!-- Indicators -->
-					<ol class="carousel-indicators">
-						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-						<li data-target="#carousel-example-generic" data-slide-to="4"></li>
-					</ol>
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner">
-						<div class="item active"><img src="./images/slider/1.jpg" alt="...">
+<div class="row">
+	<div class="col-md-12">
+		<div id="carousel">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+				</ol>
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active"><img src="./images/slider/1.jpg" alt="...">
 
-							<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
-						</div>
-						<div class="item"><img src="./images/slider/2.jpg" alt="...">
-
-							<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
-						</div>
-						<div class="item"><img src="./images/slider/3.jpg" alt="...">
-
-							<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
-						</div>
-						<div class="item"><img src="./images/slider/4.jpg" alt="...">
-
-							<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
-						</div>
-						<div class="item"><img src="./images/slider/5.jpg" alt="...">
-
-							<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
-						</div>
+						<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
 					</div>
-					<!-- Controls -->
-					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
-					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span> </a></div>
-				<!-- Carousel -->
-			</div>
+					<div class="item"><img src="./images/slider/2.jpg" alt="...">
+
+						<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
+					</div>
+					<div class="item"><img src="./images/slider/3.jpg" alt="...">
+
+						<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
+					</div>
+					<div class="item"><img src="./images/slider/4.jpg" alt="...">
+
+						<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
+					</div>
+					<div class="item"><img src="./images/slider/5.jpg" alt="...">
+
+						<div class="carousel-caption"><h3>Virtual Airlines Manager</h3></div>
+					</div>
+				</div>
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span> </a></div>
+			<!-- Carousel -->
 		</div>
 	</div>
+</div>
+
 
 	<!-- Content begin -->
-
+<div class="container">
 	<br>
 
 
@@ -331,19 +306,19 @@
 					<ul class="page-footer-list">
 						<li>
 							<i class="fa fa-angle-right"></i>
-							<a href="about.html">About Us</a>
+							<a href="./index.php?page=about-us">About Us</a>
 						</li>
 						<li>
 							<i class="fa fa-angle-right"></i>
-							<a href="faq.html">Support</a>
+							<a href="./index.php?page=support">Support</a>
 						</li>
 						<li>
 							<i class="fa fa-angle-right"></i>
-							<a href="privacy-policy.html">Privacy Policy</a>
+							<a href="./index.php?page=rules">Réglement</a>
 						</li>
 						<li>
 							<i class="fa fa-angle-right"></i>
-							<a href="terms.html">Term & condition</a>
+							<a href="./index.php?page=nospartenariat">Partenariats</a>
 						</li>
 					</ul>
 				</div>

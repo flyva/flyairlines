@@ -1,216 +1,131 @@
 <?php
-
-	/**
-
-	 * @Project: Virtual Airlines Manager (VAM)
-
-	 * @Author: Alejandro Garcia
-
-	 * @Web http://virtualairlinesmanager.net
-
-	 * Copyright (c) 2013 - 2015 Alejandro Garcia
-
-	 * VAM is licensed under the following license:
-
-	 *   Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
-
-	 *   View license.txt in the root, or visit http://creativecommons.org/licenses/by-nc-sa/4.0/
-
-	 */
-
+/**
+ * @Project: Virtual Airlines Manager (VAM)
+ * @Author: Alejandro Garcia
+ * @Web http://virtualairlinesmanager.net
+ * Copyright (c) 2013 - 2015 Alejandro Garcia
+ * VAM is licenced under the following license:
+ *   Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+ *   View license.txt in the root, or visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+ */
 ?>
-
 <?php
 
+$id = $_GET['ID'];
 
-
-	require('check_admin_rights.php');
-
-	if ($usertype == '3')
-
-	{
-
-	$flightid = $_GET['ID'];
-
-
-
-	/* Connect to Database */
-
-	$db = new mysqli($db_host , $db_username , $db_password , $db_database);
-
-	$db->set_charset("utf8");
-
-	if ($db->connect_errno > 0) {
-
-		die('Unable to connect to database [' . $db->connect_error . ']');
-
+$db = new mysqli($db_host , $db_username , $db_password , $db_database);
+$db->set_charset("utf8");
+if ($db->connect_errno > 0) {
+	die('Unable to connect to database [' . $db->connect_error . ']');
+}
+// select if the pilot has booked a flight with same from and to airports, then it means it is a regular flight
+$sql = 'select * from pireps where pirep_id=' . $id;
+if (!$result = $db->query($sql)) {
+	die('There was an error running the query [' . $db->error . ']');
+}
+while ($row = $result->fetch_assoc())
+{
+	$date = $row["date"];
+	$from_airport = $row["from_airport"];
+	$to_airport = $row["to_airport"];
+	$charter = $row["charter"];
+	$duration = $row["duration"];
+	$distance = $row["distance"];
+	$fuel = $row["fuel"];
+	$plane_type = $row["plane_type"];
+	$comment = $row["comment"];
+	$validator_comments = $row["validator_comments"];
+	$updated_at = $row["updated_at"];
+	if ($row["valid"]==0){
+		$valid = MANUAL_PIREP__STATUS_NOVALIDATED;
+	}
+	if ($row["valid"]==1){
+		$valid = MANUAL_PIREP__STATUS_VALIDATED;
+	}
+	if ($row["valid"]==2){
+		$valid = MANUAL_PIREP__STATUS_REJECTED;
 	}
 
 
 
-	// Execute SQL query
+}
+?>
+<div class="row">
+	<h1 class="margbott25"><?php echo MANUAL_PIREP; ?></h1>
+	<form class="form-horizontal" id="confirm-pirep" action="./index_vam_op.php?page=pirep_manual_insert" 					      role="form" method="post">
 
-	$sql = "select * from pireps p ,gvausers u where u.gvauser_id = p.gvauser_id and p.pirep_id='" . $flightid . "'";
+		<table class="table table-hover">
 
-	
+			<tr>
+				<td><strong>
+						<input name="flight_date" type="hidden" value="<?php echo $flight_date; ?>">
+						<?php echo MANUAL_PIREP_DATE; ?></strong></td>
+				<td><?php echo $date; ?></td>
+
+				<td><strong>
+						<input name="departure" type="hidden" value="<?php echo $from_airport; ?>">
+						<?php echo MANUAL_PIREP_DEP; ?></strong></td>
+				<td><?php echo $from_airport; ?></td>
+
+				<td><strong>
+						<input name="arrival" type="hidden" value="<?php echo $to_airport; ?>">
+						<?php echo MANUAL_PIREP_ARR; ?></strong></td>
+				<td><?php echo $to_airport ; ?></td>
+
+				<td><strong><?php echo MANUAL_PIREP_FLIGHT_TYPE; ?></strong></td>
+				<td><?php if ($charter == 0) {
+						echo MANUAL_PIREP_REG;
+					} else {
+						echo MANUAL_PIREP_CHARTER;
+					} ?></td>
+			</tr>
+			<tr>
+				<td><strong>
+						<input name="duration" type="hidden" value="<?php echo $duration; ?>">
+						<?php echo MANUAL_PIREP_TIME; ?></strong></td>
+				<td><?php echo $duration; ?></td>
+
+				<td><strong>
+						<input name="distance" type="hidden" value="<?php echo $distance; ?>">
+						<?php echo MANUAL_PIREP_DISTANCE; ?></strong></td>
+				<td><?php echo $distance; ?></td>
+
+				<td><strong>
+						<input name="fuel" type="hidden" value="<?php echo $fuel; ?>">
+						<?php echo MANUAL_PIREP_FUEL; ?></strong></td>
+				<td><?php echo $fuel; ?></td>
+
+				<td><strong>
+						<input name="plane" type="hidden" value="<?php echo $plane; ?>">
+						<input name="notes" type="hidden" value="<?php echo $comment; ?>">
+						<?php echo MANUAL_PIREP_AIRCRAFT; ?></strong></td>
+				<td><?php echo $plane_type; ?></td>
+			</tr>
+			<tr>
+				<td><strong>
+						<input name="duration" type="hidden" value="<?php echo $duration; ?>">
+						<?php echo Comments; ?></strong></td>
+				<td><?php echo $comment; ?></td>
+
+				<td><strong>
+						<input name="distance" type="hidden" value="<?php echo $distance; ?>">
+						<?php echo MANUAL_PIREP_VALIDATOR_COMMENTS; ?></strong></td>
+				<td><?php echo $validator_comments; ?></td>
+
+				<td><strong>
+						<input name="fuel" type="hidden" value="<?php echo $fuel; ?>">
+						<?php echo MANUAL_PIREP_VALIDATION; ?></strong></td>
+				<td><?php echo $valid; ?></td>
+
+				<td><strong>
+						<?php echo MANUAL_PIREP_VALIDATION_DATE; ?></strong></td>
+				<td><?php echo $updated_at; ?></td>
+			</tr>
+
+		</table>
+	</form>
+</div>
+<?php
+$db->close();
 
 ?>
-
-<div class="row">
-
-	<div class="col-md-12">
-
-		<div class="panel panel-default">
-
-			<div class="panel-heading"><?php echo VAMACARS_FLITGH_DETAILS; ?></div>
-
-
-
-			<?php
-
-				if (!$result = $db->query($sql)) {
-
-					die('There was an error running the query  [' . $db->error . ']');
-
-				}
-
-				while ($row = $result->fetch_assoc()) {
-
-			?>
-
-			<table class="table table-hover">
-
-				<tr>
-
-					<td><strong><?php echo FSKEEPER_PILOT; ?></strong></td>
-
-					<td><?php echo $row["callsign"] ." ".$row["name"] ." ".$row["surname"]; ?></td>
-
-					<td><strong><?php echo FSKEEPER_AIRCRAFT; ?></strong></td>
-
-					<td><?php echo $row["plane_type"]; ?></td>
-
-					<td><strong><?php echo FSKEEPER_DISTANCE; ?></strong></td>
-
-					<td><?php echo $row["distance"] . 'NM'; ?></td>
-
-				</tr>
-
-				<tr>
-
-					<td><strong><?php echo VAMACARS_DEPARTURE; ?></strong></td>
-
-					<td><?php echo $row["from_airport"]; ?></td>
-
-					<td><strong><?php echo VAMACARS_ARRIVAL; ?></strong></td>
-
-					<td><?php echo $row["to_airport"]; ?></td>
-
-					<td><strong><?php echo VAMACARS_DURATION; ?></strong></td>
-
-					<td><?php echo number_format($row["duration"],2); ?></td>
-
-				</tr>
-
-				<tr>
-
-					<td><strong><?php echo VAMACARS_STATUS_VALIDATION; ?></strong></td>
-
-					<td><?php if ($row["valid"] == '1') {
-
-							echo VAMACARS_STATUS_VALIDATED;
-
-						} elseif
-
-							($row["valid"] == '2'){
-
-							echo VAMACARS_STATUS_REJECTED;
-
-						} else {
-
-							echo VAMACARS_STATUS_NOVALIDATED;
-
-						} ?></td>
-
-					<td><strong><?php echo VAMACARS_TYPE; ?></strong></td>
-
-					<td><?php if ($row["charter"] == '1') {
-
-							echo VAMACARS_FLIGHT_CHARTER;
-
-						} else {
-
-							echo VAMACARS_FLIGHT_REGULAR;
-
-						} ?></td>
-
-					
-
-				</tr>
-
-
-
-			</table>
-
-			<br>
-
-		</div>
-
-	</div>
-
-</div>
-
-	<div class="row">
-
-		<div class="col-md-12">
-
-			<div class="panel panel-default">
-
-				<div class="panel-heading"><?php echo PILOT_FSKEEPER_VALIDATOR; ?></div>
-
-				<table class="table table-hover">
-
-					<tr>
-
-						<td><strong><?php echo VAMACARS_VALIDATOR_COMMENTS; ?></strong></td>
-
-						<td><?php echo $row["validator_comments"]; ?></td>						
-
-					</tr>
-
-				</table>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-heading"><?php echo FLIGHT_FINANCES; ?></div>
-				
-					<tr>
-						<?php	
-						$vamflightid = 	$flightid;				
-						include ('flight_financial_report.php');
-						?>
-					</tr>				
-			</div>
-		</div>
-	</div>	
-	
-
-<?php
-
-}
-
-	$db->close();
-
-	
-
-}
-
-?>   
-

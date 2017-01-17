@@ -24,8 +24,7 @@ $cakeDescription = __d('cake_dev', 'Virtual Airlines Manager');
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $title_for_layout; ?>
+		<?php echo "Avialpha Manager" ?>
 	</title>
 <?php
 	echo $this->Html->meta('icon');
@@ -75,7 +74,7 @@ $cakeDescription = __d('cake_dev', 'Virtual Airlines Manager');
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Virtual Airlines Manager</a>
+          <a class="navbar-brand" href="#">Avialpha Manager</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -91,7 +90,7 @@ $cakeDescription = __d('cake_dev', 'Virtual Airlines Manager');
   <!-- VAM 2.1 Icons menu Begin-->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title"><?php echo 'VAM Administration Panel';?></h3>
+      <h3 class="panel-title"><?php echo 'Avialpha Panel';?></h3>
     </div>
     <div class="panel-body">
       <div class="row">
@@ -353,19 +352,6 @@ $cakeDescription = __d('cake_dev', 'Virtual Airlines Manager');
             </div>
           </div>
         </div>
-        <div class="col-sm-2 col-md-2">
-          <div class="thumbnail">
-            <div class="caption">
-              <?php echo $this->Html->image("new.png", array(
-                    'height' => 64, 'width' => 64,
-                    'url' => array('controller' => 'Gvausers', 'action' => 'index')
-              ));?>
-              <p class="text-center"><strong><?php echo ADM_NEW_MODULE_MGR;?></strong></p>
-            </div>
-          </div>
-        </div>
-
-      </div>
 
 <! ROW 4 END -->
 
@@ -395,6 +381,6 @@ $cakeDescription = __d('cake_dev', 'Virtual Airlines Manager');
 </div>
 
 
-	
+
 </body>
 </html>

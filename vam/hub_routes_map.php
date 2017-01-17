@@ -108,7 +108,7 @@
 					echo "<tr>";
 							echo '<tr><td>';
 							echo '<div class="small"><strong>'.HUB_NAME.'</strong></div>';
-							echo $hubna . '&nbsp; <p>$hub_name</p></td></tr><tr><td>';
+							echo $hub_ . '&nbsp; <p>$hub_name</p></td></tr><tr><td>';
 							
 							echo '</tr>';
 					

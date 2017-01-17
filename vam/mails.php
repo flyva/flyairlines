@@ -23,17 +23,11 @@
 		die('There was an error running the query  [' . $db->error . ']');
 	}
 ?>
+
 <div class="row">
-	<div class="col-md-12">
-		<a href="./index_vam_op.php?page=message_create"><IMG src="images/Email-Add-32.png" BORDER=0
-		                                                      ALT=""></a><?php echo MAILS_NEW_MESSAGE_LNK; ?><p>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading"><?php echo MAILS; ?></div>
+	<h1 class="margbott25"><?php echo MAILS; ?></h1>
+
+	<div class="margbott10"> <a href="./index_vam_op.php?page=message_create"><IMG src="images/Email-Add-32.png" BORDER=0 ALT=""><?php echo MAILS_NEW_MESSAGE_LNK; ?></a> </div>
 			<div class="table-responsive">
 			<!-- Table -->
 			<table class="table table-hover">

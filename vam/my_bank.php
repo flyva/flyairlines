@@ -25,29 +25,24 @@
 	}
 ?>
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading"><?php echo FINANCIAL_TRANSACTIONS; ?></div>
+	<h1 class="margbott25"><?php echo FINANCIAL_TRANSACTIONS; ?></h1>
 
-			<!-- Table -->
-			<table class="table table-hover">
-				<?php
-					$total_money = 0;
-					echo '<tr><th>' . BANK_DATE . '</th><th>' . BANK_AMOUNT . '</th><th>' . BANK_REASON . '</th></tr>';
-					while ($row = $result->fetch_assoc()) {
-						echo '<tr><td>';
-						echo $row["date"] . '</td><td>';
-						echo number_format($row["quantity"] , 2) . '</td><td>';
-						echo $row["jump"] . '</td></tr>';
-						$total_money = $total_money + $row["quantity"];
-					}
-					echo "</table></br>";
-					$total_money = number_format($total_money , 2);
-					echo "<h3>" . BANK_TOTAL_MONEY . $total_money . ' ' . $currency . "</h3>";
-					$db->close();
-				?>
-				<table>
-		</div>
-	</div>
+	<!-- Table -->
+	<table class="table table-hover">
+		<?php
+			$total_money = 0;
+			echo '<tr><th>' . BANK_DATE . '</th><th>' . BANK_AMOUNT . '</th><th>' . BANK_REASON . '</th></tr>';
+			while ($row = $result->fetch_assoc()) {
+				echo '<tr><td>';
+				echo $row["date"] . '</td><td>';
+				echo number_format($row["quantity"] , 2) . '</td><td>';
+				echo $row["jump"] . '</td></tr>';
+				$total_money = $total_money + $row["quantity"];
+			}
+			echo "</table></br>";
+			$total_money = number_format($total_money , 2);
+			echo "<h3>" . BANK_TOTAL_MONEY . $total_money . ' ' . $currency . "</h3>";
+			$db->close();
+		?>
+	<table>
 </div>

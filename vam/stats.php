@@ -107,6 +107,7 @@
 ?>
 <!-- Row 1-->
 <div class="row">
+	<h1 class="margbott25">STATISTIQUES DES VOLS</h1>
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -342,4 +343,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>

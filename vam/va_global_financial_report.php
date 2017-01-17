@@ -78,67 +78,50 @@
 ?>
 
 <div class="row">
-
-	<div class="col-md-12">
-
-		<div class="panel panel-default">
-			<div class="panel-heading"><?php echo VA_GLOBAL_FINANCES; ?></div>
-
-			<!-- Table -->
-
-			<table class="table table-hover">
-
-				<?php
-					echo '<td class="warning">' . COSTS. ' </td> <td class="warning"></td></tr>';
-					while ($row = $result->fetch_assoc()) {
-						echo '<td>' . $row['financial_parameter'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
-					}
-					echo '<td class="warning">' . INCOME. ' </td> <td class="warning"></td></tr>';
-					while ($row = $result2->fetch_assoc()) {
-						echo '<td>' . $row['financial_parameter'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
-					}
-					echo '<td class="warning">' . INCOME_REGULAR_ROUTES. ' </td> <td class="warning"></td></tr>';
-					while ($row = $result3->fetch_assoc()) {
-						echo '<td>' . $row['des'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
-					}
-					while ($row = $result4->fetch_assoc()) {
-						echo '<td>' . $row['des'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
-					}
-					echo '<td class="warning">' . AIRCRAFT_PURCHASE. ' </td> <td class="warning"></td></tr>';
-					while ($row = $result5->fetch_assoc()) {
-						echo '<td>' . $row['description'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
-					}
-					echo '<td class="warning">' . COSTS_PILOTS_SALARY. ' </td> <td class="warning"></td></tr>';
-					while ($row = $result6->fetch_assoc()) {
-						echo '<td>' . $row['description'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
-					}	
-					echo '<td class="warning">' . COSTS_AIRCRAFT_MAINTENANCE. ' </td> <td class="warning"></td></tr>';
-					while ($row = $result7->fetch_assoc()) {
-						echo '<td>' . $row['description'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
-					}	
-					echo '<td class="warning">' . COSTS_AIRCRAFT_REPAIR. ' </td> <td class="warning"></td></tr>';
-					while ($row = $result8->fetch_assoc()) {
-						echo '<td>' . $row['description'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
-					}	
-
-					if ($total_amount>0)														
-					{
-						echo '<td class="success">' . FINANCE_BALANCE. ' </td> <td class="success">'.number_format($total_amount,2).'</td></tr>';
-					}
-					else
-					{
-						echo '<td class="danger">' . FINANCE_BALANCE. ' </td> <td class="danger">'.number_format($total_amount,2).'</td></tr>';
-					}
-					
-
-
-					
-					echo '</table>';
-				?>
-
-		</div>
-
-	</div>
-
+	<h1 class="margbott25">RAPPORT FINANCIER GLOBAL</h1>
+	<!-- Table -->
+	<table class="table table-hover">
+		<?php
+			echo '<td class="warning">' . COSTS. ' </td> <td class="warning"></td></tr>';
+			while ($row = $result->fetch_assoc()) {
+				echo '<td>' . $row['financial_parameter'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
+			}
+			echo '<td class="warning">' . INCOME. ' </td> <td class="warning"></td></tr>';
+			while ($row = $result2->fetch_assoc()) {
+				echo '<td>' . $row['financial_parameter'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
+			}
+			echo '<td class="warning">' . INCOME_REGULAR_ROUTES. ' </td> <td class="warning"></td></tr>';
+			while ($row = $result3->fetch_assoc()) {
+				echo '<td>' . $row['des'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
+			}
+			while ($row = $result4->fetch_assoc()) {
+				echo '<td>' . $row['des'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
+			}
+			echo '<td class="warning">' . AIRCRAFT_PURCHASE. ' </td> <td class="warning"></td></tr>';
+			while ($row = $result5->fetch_assoc()) {
+				echo '<td>' . $row['description'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
+			}
+			echo '<td class="warning">' . COSTS_PILOTS_SALARY. ' </td> <td class="warning"></td></tr>';
+			while ($row = $result6->fetch_assoc()) {
+				echo '<td>' . $row['description'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
+			}
+			echo '<td class="warning">' . COSTS_AIRCRAFT_MAINTENANCE. ' </td> <td class="warning"></td></tr>';
+			while ($row = $result7->fetch_assoc()) {
+				echo '<td>' . $row['description'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
+			}
+			echo '<td class="warning">' . COSTS_AIRCRAFT_REPAIR. ' </td> <td class="warning"></td></tr>';
+			while ($row = $result8->fetch_assoc()) {
+				echo '<td>' . $row['description'] . ' </td> <td>'. number_format($row['vaf_amount'],2).'</td></tr>';
+			}
+			if ($total_amount>0)
+			{
+				echo '<td class="success">' . FINANCE_BALANCE. ' </td> <td class="success">'.number_format($total_amount,2).'</td></tr>';
+			}
+			else
+			{
+				echo '<td class="danger">' . FINANCE_BALANCE. ' </td> <td class="danger">'.number_format($total_amount,2).'</td></tr>';
+			}
+			echo '</table>';
+		?>
 </div>
-
+</div>

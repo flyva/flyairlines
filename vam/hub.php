@@ -19,7 +19,7 @@
 
 	$sql_hub_global ="select * from hubs order by hub asc";
 
-	if (!$result_hub_global = $db->query($sql_hub_global)) {
+	if (! var_dump($result_hub_global) = $db->query($sql_hub_global)) {
 		die('There was an error running the query [' . $db->error . ']');
 	}
 	while ($row_hubs = $result_hub_global->fetch_assoc()) {
@@ -80,7 +80,7 @@
 		if (!$result_hub = $db->query($sql_hub)) {
 			die('There was an error running the query [' . $db->error . ']');
 		}
-		while ($row_hub = $result_hub->fetch_assoc()) {
+		while ( $row_hub = $result_hub->fetch_assoc()) {
 			$iso_country= $row_hub["iso_country"];
 			$hub_name= $row_hub["name"];
 			$hub_web= $row_hub["web"];
@@ -100,7 +100,7 @@
 		<div class="col-md-">
 			<div class="panel panel-default">
 				<!-- Default panel contents -->
-				<div class="panel-heading"><?php echo HUB_NAME; ?></div>
+				<div class="panel-heading"><?php echo $hub_name; ?></div>
 				
 					<!--Table--!>
 					<?php
@@ -108,7 +108,7 @@
 					echo "<tr>";
 							echo '<tr><td>';
 							echo '<div class="small"><strong>'.HUB_NAME.'</strong></div>';
-							echo $hubna . '&nbsp; <p>$hub_name</p></td></tr><tr><td>';
+							echo $hub_name  . '&nbsp; <p>$hub_name</p></td></tr><tr><td>';
 							
 							echo '</tr>';
 					

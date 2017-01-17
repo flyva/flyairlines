@@ -23,19 +23,9 @@
 	}
 ?>
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading"><?php echo RULES; ?></div>
-
-			<!-- Table -->
-			<table class="table table-hover">
-				<tr>
-				</tr>
-
-			</table>
-
-
-		</div>
+	<h1><?php echo "Règlement";?></h1>
+	<div class="margbott25 col-md-12">
+		<object style="width: 100%; height: 100%;" class="pdf" data="download/Réglement%20Fly%20Airlines.pdf" type="application/pdf"> </object>
 	</div>
+</div>
 </div>

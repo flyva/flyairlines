@@ -11,14 +11,6 @@
 ?>
 
 <div class="row">
-    <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?php echo PILOT_FLIGTH_MAP; ?></h3>
-            </div>
-            <div class="panel-body">
-                <?php include 'pilot_flights_map.php'; ?>
-            </div>
-        </div>
-    </div>
+    <h3><?php echo PILOT_FLIGTH_MAP; ?></h3>
+    <?php include 'pilot_flights_map.php'; ?>
 </div>

@@ -32,7 +32,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="name"><?php echo PILOT_IMAGEUPLOADER_FORM; ?></label>
 							<div class="col-sm-10">
-								<a href="./index_vam_op.php?page=pilot_upload_image" ><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;Upload</a>
+								<a href="./index_vam_op.php?page=pilot_upload_image" ><img src="images/computing-cloud.png" style="width: 35px;" alt""></img>&nbsp;Upload</a>
 							</div>
 						</div>
 						<div class="form-group">

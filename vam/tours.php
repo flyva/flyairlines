@@ -33,30 +33,25 @@ on t.tour_id = t2.tour_id";
 ?>
 
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading"><?php echo $panel_title; ?></div>
-			<div class="table-responsive">
-			<!-- Table -->
-			<table class="table table-hover">
-				<?php
-					echo "<tr><th>" . TOURS_NAME . "</th><th>" . TOURS_START_DATE . "</th><th>" . TOURS_END_DATE . "</th><th>" . TOURS_NUM_LEGS . "</th><th>" . TOURS_DISTANCE . "</th><th>" . INFO_PLANE . "</th></tr>";
-					while ($row = $result->fetch_assoc()) {
-						echo "<td>";
-						echo $row["tour_name"] . '</td><td>';
-						echo $row["start_date"] . '</td><td>';
-						echo $row["end_date"] . '</td><td>';
-						echo $row["legs"] . '</td><td>';
-						echo $row["tour_len"] . '</td><td>';
-						echo '<a href="./index.php?page=tour_detail&tour_id=' . $row["tour_id"] . '"><IMG src="./images/info.png" WIDTH="20" HEIGHT="20" BORDER=0 ALT=""></a></td></tr>';
-					}
-					$db->close();
-				?>
-			</table>
-			</div>
+	<h1 class="margbott25"><?php echo $panel_title; ?></h1>
+		<div class="table-responsive">
+		<!-- Table -->
+		<table class="table table-hover">
+			<?php
+				echo "<tr><th>" . TOURS_NAME . "</th><th>" . TOURS_START_DATE . "</th><th>" . TOURS_END_DATE . "</th><th>" . TOURS_NUM_LEGS . "</th><th>" . TOURS_DISTANCE . "</th><th>" . INFO_PLANE . "</th></tr>";
+				while ($row = $result->fetch_assoc()) {
+					echo "<td>";
+					echo $row["tour_name"] . '</td><td>';
+					echo $row["start_date"] . '</td><td>';
+					echo $row["end_date"] . '</td><td>';
+					echo $row["legs"] . '</td><td>';
+					echo $row["tour_len"] . '</td><td>';
+					echo '<a href="./index.php?page=tour_detail&tour_id=' . $row["tour_id"] . '"><IMG src="./images/info.png" WIDTH="20" HEIGHT="20" BORDER=0 ALT=""></a></td></tr>';
+				}
+				$db->close();
+			?>
+		</table>
 		</div>
-	</div>
-
 	<div class="clearfix visible-lg"></div>
+</div>
 </div>

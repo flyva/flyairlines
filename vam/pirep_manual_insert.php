@@ -125,50 +125,46 @@
 	while ($row = $result->fetch_assoc()) {
 		?>
 		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading"><?php echo MANUAL_PIREP; ?></div>
-					<table class="table table-hover">
-						<tr>
-							<td><strong><?php echo MANUAL_PIREP_DATE; ?></strong></td>
-							<td><?php echo $row["date"]; ?></td>
-							<td><strong><?php echo MANUAL_PIREP_DEP; ?></strong></td>
-							<td><?php echo $row["from_airport"]; ?></td>
-							<td><strong><?php echo MANUAL_PIREP_ARR; ?></strong></td>
-							<td><?php echo $row["to_airport"]; ?></td>
-							<td><strong><?php echo MANUAL_PIREP_FLIGHT_TYPE; ?></strong></td>
-							<td><?php if ($row["charter"] == 1) {
-									echo MANUAL_PIREP_CHARTER;
-								} else {
-									echo MANUAL_PIREP_REG;
-								} ?></td>
-						</tr>
-						<tr>
-							<td><strong><?php echo MANUAL_PIREP_TIME; ?></strong></td>
-							<td><?php echo $row["duration"]; ?></td>
-							<td><strong><?php echo MANUAL_PIREP_DISTANCE; ?></strong></td>
-							<td><?php echo $row["distance"]; ?></td>
-							<td><strong><?php echo MANUAL_PIREP_FUEL; ?></strong></td>
-							<td><?php echo $row["fuel"]; ?></td>
-							<td><strong><?php echo MANUAL_PIREP_AIRCRAFT; ?></strong></td>
-							<td><?php echo $row["plane_type"]; ?></td>
-						</tr>
-						<tr>
-							<td>
-							</td>
-							<td></td>
-							<td>
+			<h1 class="margbott25"><?php echo MANUAL_PIREP; ?></h1>
+			<table class="table table-hover">
+				<tr>
+					<td><strong><?php echo MANUAL_PIREP_DATE; ?></strong></td>
+					<td><?php echo $row["date"]; ?></td>
+					<td><strong><?php echo MANUAL_PIREP_DEP; ?></strong></td>
+					<td><?php echo $row["from_airport"]; ?></td>
+					<td><strong><?php echo MANUAL_PIREP_ARR; ?></strong></td>
+					<td><?php echo $row["to_airport"]; ?></td>
+					<td><strong><?php echo MANUAL_PIREP_FLIGHT_TYPE; ?></strong></td>
+					<td><?php if ($row["charter"] == 1) {
+							echo MANUAL_PIREP_CHARTER;
+						} else {
+							echo MANUAL_PIREP_REG;
+						} ?></td>
+				</tr>
+				<tr>
+					<td><strong><?php echo MANUAL_PIREP_TIME; ?></strong></td>
+					<td><?php echo $row["duration"]; ?></td>
+					<td><strong><?php echo MANUAL_PIREP_DISTANCE; ?></strong></td>
+					<td><?php echo $row["distance"]; ?></td>
+					<td><strong><?php echo MANUAL_PIREP_FUEL; ?></strong></td>
+					<td><?php echo $row["fuel"]; ?></td>
+					<td><strong><?php echo MANUAL_PIREP_AIRCRAFT; ?></strong></td>
+					<td><?php echo $row["plane_type"]; ?></td>
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td></td>
+					<td>
 
-							</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</table>
-				</div>
-			</div>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
 		</div>
 		<?php
 		$db->close();

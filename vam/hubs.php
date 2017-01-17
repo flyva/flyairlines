@@ -1,32 +1,32 @@
 <?php
-	/**
-	 * @Project: Virtual Airlines Manager (VAM)
-	 * @Author: Alejandro Garcia
-	 * @Web http://virtualairlinesmanager.net
-	 * Copyright (c) 2013 - 2015 Alejandro Garcia
-	 * VAM is licenced under the following license:
-	 *   Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
-	 *   View license.txt in the root, or visit http://creativecommons.org/licenses/by-nc-sa/4.0/
-	 */
+/**
+ * @Project: Virtual Airlines Manager (VAM)
+ * @Author: Alejandro Garcia
+ * @Web http://virtualairlinesmanager.net
+ * Copyright (c) 2013 - 2015 Alejandro Garcia
+ * VAM is licenced under the following license:
+ *   Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+ *   View license.txt in the root, or visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+ */
 ?>
 <?php
-	$db = new mysqli($db_host , $db_username , $db_password , $db_database);
-	$db->set_charset("utf8");
+$db = new mysqli($db_host , $db_username , $db_password , $db_database);
+$db->set_charset("utf8");
 
-	if ($db->connect_errno > 0) {
-		die('Unable to connect to database [' . $db->connect_error . ']');
-	}
+if ($db->connect_errno > 0) {
+	die('Unable to connect to database [' . $db->connect_error . ']');
+}
 
-	$sql_hub_global ="select * from hubs order by hub asc";
+$sql_hub_global ="select * from hubs order by hub asc";
 
-	if (!$result_hub_global = $db->query($sql_hub_global)) {
-		die('There was an error running the query [' . $db->error . ']');
-	}
-	while ($row_hubs = $result_hub_global->fetch_assoc()) {
-		$hub_id= $row_hubs["hub_id"];
+if (!$result_hub_global = $db->query($sql_hub_global)) {
+	die('There was an error running the query [' . $db->error . ']');
+}
+while ($row_hubs = $result_hub_global->fetch_assoc()) {
+	$hub_id= $row_hubs["hub_id"];
 
-		// pilots
-		$sql_pilots = "select * from country_t c, gvausers gu, ranks r, hubs h, (select 0 + sum(time) as gva_hours, pilot from v_pilot_roster_rejected vv group by pilot) as v
+	// pilots
+	$sql_pilots = "select * from country_t c, gvausers gu, ranks r, hubs h, (select 0 + sum(time) as gva_hours, pilot from v_pilot_roster_rejected vv group by pilot) as v
 	            where
 	            h.hub_id = $hub_id and
 	            gu.rank_id=r.rank_id and
@@ -35,87 +35,83 @@
 	            gu.country=c.iso2 and
 	            v.pilot = gu.gvauser_id order by callsign asc";
 
-		if (!$result_pilots = $db->query($sql_pilots)) {
-			die('There was an error running the query [' . $db->error . ']');
-		}
+	if (!$result_pilots = $db->query($sql_pilots)) {
+		die('There was an error running the query [' . $db->error . ']');
+	}
 
-		// fleet
+	// fleet
 
-		$sql_fleet= "select registry, status, hours,plane_description, location
+	$sql_fleet= "select registry, status, hours,plane_description, location
 				from fleets f
 				inner join fleettypes ft on f.fleettype_id=ft.fleettype_id
 				where hub_id = $hub_id";
 
-		if (!$result_fleet = $db->query($sql_fleet)) {
-			die('There was an error running the query [' . $db->error . ']');
-		}
+	if (!$result_fleet = $db->query($sql_fleet)) {
+		die('There was an error running the query [' . $db->error . ']');
+	}
 
-		// Hub info
+	// Hub info
 
-		$sql_hub = "select count(*) num_pilots from gvausers where hub_id=$hub_id ";
-		if (!$result_hub = $db->query($sql_hub)) {
-			die('There was an error running the query [' . $db->error . ']');
-		}
-		while ($row_hub = $result_hub->fetch_assoc()) {
-			$num_pilots= $row_hub["num_pilots"];
-		}
+	$sql_hub = "select count(*) num_pilots from gvausers where hub_id=$hub_id ";
+	if (!$result_hub = $db->query($sql_hub)) {
+		die('There was an error running the query [' . $db->error . ']');
+	}
+	while ($row_hub = $result_hub->fetch_assoc()) {
+		$num_pilots= $row_hub["num_pilots"];
+	}
 
-		$sql_hub = "select count(*) num_fleet from fleets where hub_id=$hub_id ";
-		if (!$result_hub = $db->query($sql_hub)) {
-			die('There was an error running the query [' . $db->error . ']');
-		}
-		while ($row_hub = $result_hub->fetch_assoc()) {
-			$num_fleet= $row_hub["num_fleet"];
-		}
+	$sql_hub = "select count(*) num_fleet from fleets where hub_id=$hub_id ";
+	if (!$result_hub = $db->query($sql_hub)) {
+		die('There was an error running the query [' . $db->error . ']');
+	}
+	while ($row_hub = $result_hub->fetch_assoc()) {
+		$num_fleet= $row_hub["num_fleet"];
+	}
 
-		$sql_hub = "select count(*) num_routes from routes where hub_id=$hub_id ";
-		if (!$result_hub = $db->query($sql_hub)) {
-			die('There was an error running the query [' . $db->error . ']');
-		}
-		while ($row_hub = $result_hub->fetch_assoc()) {
-			$num_routes= $row_hub["num_routes"];
-		}
+	$sql_hub = "select count(*) num_routes from routes where hub_id=$hub_id ";
+	if (!$result_hub = $db->query($sql_hub)) {
+		die('There was an error running the query [' . $db->error . ']');
+	}
+	while ($row_hub = $result_hub->fetch_assoc()) {
+		$num_routes= $row_hub["num_routes"];
+	}
 
-		$sql_hub = "select * from hubs h inner join airports a on a.ident = h.hub where hub_id=$hub_id ";
-		if (!$result_hub = $db->query($sql_hub)) {
-			die('There was an error running the query [' . $db->error . ']');
-		}
-		while ($row_hub = $result_hub->fetch_assoc()) {
-			$iso_country= $row_hub["iso_country"];
-			$hub_name= $row_hub["name"];
-			$hub_web= $row_hub["web"];
-			$hub_image = $row_hub["image_url"];
-		}
+	$sql_hub = "select * from hubs h inner join airports a on a.ident = h.hub where hub_id=$hub_id ";
+	if (!$result_hub = $db->query($sql_hub)) {
+		die('There was an error running the query [' . $db->error . ']');
+	}
+	while ($row_hub = $result_hub->fetch_assoc()) {
+		$iso_country= $row_hub["iso_country"];
+		$hub_name= $row_hub["name"];
+		$hub_web= $row_hub["web"];
+		$hub_image = $row_hub["image_url"];
+	}
 
-		$sql_routes = "select * from routes where hub_id=$hub_id ";
+	$sql_hub = "select hub from hubs WHERE hub_id=$hub_id";
+	if (!$result_hub = $db->query($sql_hub)) {
+		die('There was an error running the query [' . $db->error . ']');
+	}
+	while ($row_hub = $result_hub->fetch_assoc()) {
+	$num_hub = $row_hub["name"];
+	}
 
-		if (!$result_routes = $db->query($sql_routes)) {
-			die('There was an error running the query [' . $db->error . ']');
-		}
+	$sql_routes = "select * from routes where hub_id=$hub_id ";
+
+	if (!$result_routes = $db->query($sql_routes)) {
+		die('There was an error running the query [' . $db->error . ']');
+	}
+
 
 
 	?>
-	<?php if (!empty($hub_name)):?> <div class="alert alert-info" role="alert"></div> <?php endif; ?>
 	<div class="row">
-		<div class="col-md-">
+		<div class="col-md-12">
 			<div class="panel panel-default">
 				<!-- Default panel contents -->
-				<div class="panel-heading"><?php echo HUB; ?></div>
-				
-					<!--Table--!>
-					<?php
-					
-					echo "<tr>";
-							echo '<div class="small"><strong>'.$hubna.'</strong></div>';
-							echo $hubs . '&nbsp;</td></tr><tr><td>';
-							echo '</tr>';
-					
-					?>
-				
-				</table>
+				<div class="panel-heading"><p><?php echo var_dump( $row_hub["name"]); ?></p></div>
 			</div>
 		</div>
-		
+
 		<div class="col-md-6">
 			<div class="panel panel-default">
 				<!-- Default panel contents -->
@@ -124,24 +120,24 @@
 					<!-- Table -->
 					<table class="table table-hover">
 						<?php
-							echo "<tr><th>" . CALLSIGN . " </th><th>" . NAME .  "</th><th>" . LOCATION . "</th><th>" . HOURS . "</th><th>" . RANK . "</th><th>" . COUNTRY . "</th><th>" . STATUS . "</th>";
+						echo "<tr><th>" . CALLSIGN . " </th><th>" . NAME .  "</th><th>" . LOCATION . "</th><th>" . HOURS . "</th><th>" . RANK . "</th><th>" . COUNTRY . "</th><th>" . STATUS . "</th>";
 
-							echo "</tr>";
-							while ($row_pilots = $result_pilots->fetch_assoc()) {
-								echo "<td>";
-								echo '<a href="./index.php?page=pilot_details&pilot_id=' . $row_pilots["gvauser_id"] . '">' . $row_pilots["callsign"] . '</a></td><td>';
-								echo $row_pilots["name"] . ' ' . $row_pilots["surname"] . '</td><td>';
-								echo $row_pilots["location"] . '</td><td>';
-								echo round($row_pilots["gva_hours"] , 2) + round($row_pilots["transfered_hours"] , 2) . '</td><td>';
-								echo $row_pilots["rank"] . '</td><td>';
-								echo '<img src="./images/country-flags/' . $row_pilots["iso2"] . '.png" alt="' . $row_pilots["iso2"] . '">' . '  ' . $row["short_name"] . '</td><td>';
-								if ($row_pilots["activation"] == 1)
-									echo '<img src="./images/green-user-icon.png" height="25" width="25"</td>';
-								else
-									echo '<img src="./images/red-user-icon.png" height="25" width="25"</td>';
+						echo "</tr>";
+						while ($row_pilots = $result_pilots->fetch_assoc()) {
+							echo "<td>";
+							echo '<a href="./index.php?page=pilot_details&pilot_id=' . $row_pilots["gvauser_id"] . '">' . $row_pilots["callsign"] . '</a></td><td>';
+							echo $row_pilots["name"] . ' ' . $row_pilots["surname"] . '</td><td>';
+							echo $row_pilots["location"] . '</td><td>';
+							echo round($row_pilots["gva_hours"] , 2) + round($row_pilots["transfered_hours"] , 2) . '</td><td>';
+							echo $row_pilots["rank"] . '</td><td>';
+							echo '<img src="./images/country-flags/' . $row_pilots["iso2"] . '.png" alt="' . $row_pilots["iso2"] . '">' . '  ' . $row["short_name"] . '</td><td>';
+							if ($row_pilots["activation"] == 1)
+								echo '<img src="./images/green-user-icon.png" height="25" width="25"</td>';
+							else
+								echo '<img src="./images/red-user-icon.png" height="25" width="25"</td>';
 
-								echo '</tr>';
-							}
+							echo '</tr>';
+						}
 
 						?>
 					</table>
@@ -157,20 +153,20 @@
 					<!-- Table -->
 					<table class="table table-hover ">
 						<?php
-							echo "<tr><th>" . REGISTRY . " </th><th>" . TYPE .  "</th><th>" . LOCATION_PLANE . "</th><th>" . HOURS_PLANE . "</th><th>" . STATUS_PLANE . "</th>";
+						echo "<tr><th>" . REGISTRY . " </th><th>" . TYPE .  "</th><th>" . LOCATION_PLANE . "</th><th>" . HOURS_PLANE . "</th><th>" . STATUS_PLANE . "</th>";
 
-							echo "</tr>";
-							while ($row_fleet = $result_fleet->fetch_assoc()) {
-								echo "<td>";
-								echo '<a href="./index.php?page=plane_info_public&registry_id=' . $row_fleet["registry"] . '">' . $row_fleet["registry"] . '</a></td><td>';
-								echo $row_fleet["plane_description"]. '</td><td>';
-								echo $row_fleet["location"]. '</td><td>';
-								echo $row_fleet["hours"]. '</td><td>';
-								echo $row_fleet["status"]. '</td>';
+						echo "</tr>";
+						while ($row_fleet = $result_fleet->fetch_assoc()) {
+							echo "<td>";
+							echo '<a href="./index.php?page=plane_info_public&registry_id=' . $row_fleet["registry"] . '">' . $row_fleet["registry"] . '</a></td><td>';
+							echo $row_fleet["plane_description"]. '</td><td>';
+							echo $row_fleet["location"]. '</td><td>';
+							echo $row_fleet["hours"]. '</td><td>';
+							echo $row_fleet["status"]. '</td>';
 
 
-								echo '</tr>';
-							}
+							echo '</tr>';
+						}
 
 						?>
 					</table>
@@ -192,27 +188,27 @@
 					<!-- Table -->
 					<table class="table table-hover">
 						<?php
-							echo "<tr>";
-							echo '<td>';
-							echo '<img src='.$hub_image.' width="100%" >';
-							echo '</td></tr>';
-							echo '<tr><td>';
-							echo '<div class="small"><strong>'.HUB_NAME.'</strong></div>';
-							echo $hubna . '&nbsp;<img src="./images/country-flags/' . $iso_country . '.png" ></td></tr><tr><td>';
+						echo "<tr>";
+						echo '<td>';
+						echo '<img src='.$hub_image.' width="100%" >';
+						echo '</td></tr>';
+						echo '<tr><td>';
+						echo '<div class="small"><strong>'.$row_hub["name"].'</strong></div>';
+						echo $hubna . '&nbsp;<img src="./images/country-flags/' . $iso_country . '.png" ></td></tr><tr><td>';
 
-							echo '<div class="small"><strong>'.HUB_WEB.'</strong></div>';
-							echo '<a href='.$hub_web. '>Link</a>'.'</td></tr><tr><td>';
+						echo '<div class="small"><strong>'.HUB_WEB.'</strong></div>';
+						echo '<a href='.$hub_web. '>Link</a>'.'</td></tr><tr><td>';
 
-							echo '<div class="small"><strong>'.HUB_NUM_PILOTS.'</strong></div>';
-							echo $num_pilots.'</td></tr><tr><td>';
+						echo '<div class="small"><strong>'.HUB_NUM_PILOTS.'</strong></div>';
+						echo $num_pilots.'</td></tr><tr><td>';
 
-							echo '<div class="small"><strong>'.HUB_NUM_FLEET.'</strong></div>';
-							echo $num_fleet.'</td></tr><tr><td>';
+						echo '<div class="small"><strong>'.HUB_NUM_FLEET.'</strong></div>';
+						echo $num_fleet.'</td></tr><tr><td>';
 
-							echo '<div class="small"><strong>'.HUB_NUM_ROUTES.'</strong></div>';
-							echo $num_routes.'</td>';
+						echo '<div class="small"><strong>'.HUB_NUM_ROUTES.'</strong></div>';
+						echo $num_routes.'</td>';
 
-							echo '</tr>';
+						echo '</tr>';
 
 
 						?>
@@ -228,14 +224,14 @@
 					<!-- Table -->
 					<table class="table table-hover">
 						<?php
-							echo "<tr><th>" . FLIGHT_VA . " </th><th>" . DEPARTURE .  "</th><th>" . ARRIVAL . "</th>";
-							echo "</tr>";
-							while ($row_routes = $result_routes->fetch_assoc()) {
-								echo '<tr><td>';
-								echo $row_routes["flight"].'</td><td>';
-								echo $row_routes["departure"].'</td><td>';
-								echo $row_routes["arrival"].'</td></tr>';
-							}
+						echo "<tr><th>" . FLIGHT_VA . " </th><th>" . DEPARTURE .  "</th><th>" . ARRIVAL . "</th>";
+						echo "</tr>";
+						while ($row_routes = $result_routes->fetch_assoc()) {
+							echo '<tr><td>';
+							echo $row_routes["flight"].'</td><td>';
+							echo $row_routes["departure"].'</td><td>';
+							echo $row_routes["arrival"].'</td></tr>';
+						}
 
 						?>
 					</table>
@@ -263,7 +259,8 @@
 
 		<div class="clearfix visible-lg"></div>
 	</div>
-<?php
-	} // END global while loop
-	$db->close();
+	<?php
+} // END global while loop
+$db->close();
 ?>
+</div>

@@ -22,12 +22,12 @@ if (!$result = $db->query($sql)) {
 ?>
 <div class="row">
 	<div class="col-md-12">
-	<div class="panel panel-default">			
-		<!-- Default panel contents -->			
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
 			<div class="panel-heading"><?php echo VAMACARS_SIMACARS; ?></div>
-		<div class="table-responsive">			
-			<!-- Table -->			
-			<table class="table table-hover">				
+		<div class="table-responsive">
+			<!-- Table -->
+			<table class="table table-hover">
 				<?php
 					echo "<tr><th>" . VAMACARS_DATE . " </th><th>" . VAMACARS_DEPARTURE . "</th><th>" . VAMACARS_ARRIVAL . "</th><th>" . VAMACARS_DURATION . "</th><th>" . VAMACARS_DISTANCE . "</th>
 					<th>" . VAMACARS_FUELCONSUMED . "</th><th>" . VAMACARS_DETAILS . "</th>"."</tr>";

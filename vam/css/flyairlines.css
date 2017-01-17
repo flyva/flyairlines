@@ -45,3 +45,323 @@
     align-items: center;
     height: 281.33px;
 }
+.bot{
+    margin-top: 100px;
+}
+.taille{
+    width: 150px;
+    margin-left: 100px;
+}
+.part{
+    width: 150px;
+}
+.center{
+     text-align: center
+}
+.pad1{
+    padding-bottom: 0px;
+}
+.logo_users{
+    width: 70px;
+    margin-top: -30px;
+}
+.img_users{
+    margin-left: -851px;
+    margin-bottom: -175px;
+    margin-top: 65px;
+}
+.img_carre{
+    width: 87px;
+    height: 87px;
+}
+.img_avion{
+    margin-top: -292px;
+    margin-left: 29px;
+}
+.img_time{
+    margin-left: 850px;
+    margin-top: -191px;
+}
+.img_vols_totals{
+    margin-left: 285px;
+    margin-top: -180px;
+}
+.img_vols_regulier{
+    margin-left: -284px;
+    margin-top: -185px;
+}
+.carre_pilote1{
+    margin-top: -25px;
+}
+.carre_red{
+    height: 81px;
+    width: 141px;
+    background: #ff4444;
+    border-radius: 45px;
+}
+.users{
+    margin-left: -310px;
+}
+.carre_avion{
+    margin-top: -121px;
+    margin-left: -8px;
+}
+.carre_yelow{
+    height: 81px;
+    width: 141px;
+    background: #e4c680;
+    border-radius: 45px;
+}
+.text_avions{
+    margin-top: 155px;
+    margin-left: 57px;
+}
+.text_vols_totals{
+    margin-left: 628px;
+    margin-top: -101px;
+}
+
+.text_time{
+    margin-left: 342px;
+    margin-top: -106px;
+}
+.text_vols_regulier{
+    margin-left: 911px;
+    margin-top: -104px;
+    margin-bottom: 80px;
+
+}
+.carre_blue{
+    height: 81px;
+    width: 141px;
+    background: #678ebb;
+    border-radius: 45px;
+}
+.carre_green{
+    height: 81px;
+    width: 141px;
+    background: #8dc1bd;
+    border-radius: 45px;
+}
+.carre_pirpple{
+    height: 81px;
+    width: 141px;
+    background: #817c9a;
+    border-radius: 45px;
+}
+.color_white{
+    color: white;
+}
+.center2{
+    text-align: center;
+}
+.Open_Sans_Light{
+    font-family: "Open Sans Light";
+}
+.carre2{
+    margin-top: 10px;
+}
+.chiffre{
+    margin-top: 5px;
+}
+.statistique{
+    margin-top: 50px;
+    margin-bottom: 34px;
+}
+.fr{
+    margin-top: -110px;
+    margin-left: 1871px;
+}
+.bg{
+    margin-top: -110px;
+    width: 25px;
+    margin-left: 1843px;
+    height: 14px;
+}
+.social-link-footer li {
+    float: right;
+    margin: 5px 10px 5px 0px;
+    padding-bottom: 5px;
+}
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.address h4.rs{
+    margin-bottom: 63px;
+}
+.social-link-footer li.rs2{
+    margin-right: 370px;
+    margin-top: -52px;
+}
+.social-link-footer li a.fb2{
+    padding: 14px;
+}
+.social-link-footer li.rs3{
+    margin-right: 290px;
+    margin-top: -59px;
+}
+.social-link-footer li.rs4{
+    margin-right: 210px;
+    margin-top: -60px;
+}
+.contact{
+:focus
+}
+.pad2{
+    padding-top: 12px;
+}
+.imgcenter{
+    margin-left: 20px;
+}
+.margbott25{
+    margin-bottom: 25px;
+}
+.center3{
+    margin-bottom: 4px;
+    text-align: center;
+}
+.text_souligne{
+    text-decoration: underline;
+}
+.text_italique{
+    font-style: italic;
+}
+.margbott10{
+    margin-bottom: 10px;
+}
+.bs_register{
+    position: relative;
+    padding: 45px 15px 15px;
+    margin: 0 -15px 15px;
+    background-color: #F8f8f8;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    border-color: #e5e5e5 #eee #eee;
+    border-style: solid;
+    border-width: 1px 1px;
+    max-width: 1150px;
+}
+.portfolio-items,
+.portfolio-filter {
+    list-style: none;
+    padding: 0;
+    margin: 0 -20px 20px 0;
+}
+.portfolio-filter > li {
+    display: inline-block;
+}
+.portfolio-items > li {
+    float: left;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.portfolio-items.col-2 > li {
+    width: 50%;
+}
+.portfolio-items.col-3 > li {
+    width: 33%;
+}
+.portfolio-items.col-4 > li {
+    width: 25%;
+}
+.portfolio-items.col-5 > li {
+    width: 20%;
+}
+.portfolio-items.col-6 > li {
+    width: 16%;
+}
+.portfolio-item {
+    padding: 0;
+    margin: 0;
+}
+.portfolio-item .item-inner {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px 10px 0;
+    margin: 0 20px 20px 0;
+    position: relative;
+}
+.portfolio-item img {
+    width: 100%;
+}
+.portfolio-item h5 {
+    background: #fff;
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 14px;
+    color: #2c3e50;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition: opacity 300ms;
+    -moz-transition: opacity 300ms;
+    -o-transition: opacity 300ms;
+    transition: opacity 300ms;
+}
+.portfolio-item .overlay .preview {
+    position: relative;
+    top: 50%;
+    display: inline-block;
+    margin-top: -20px;
+}
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+#recent-works .item-inner {
+    position: relative;
+    margin: 0;
+}
+.button_flottes{
+    width: 124px;
+    height: 8px;
+}
+.button_flottes2{
+    width: 124px;
+    height: 108px;
+}
+.portfolio-item .overlay .preview.buttonflotte{
+    margin-top: -57px;
+}
+.button_flottes3{
+    width: 124px;
+    height: 27px;
+}
+.margleft200{
+    margin-left: 25em;
+}
+.ab{
+    margin-left: 30px;
+}
+.outus{
+    margin-left: 50px;
+}
+.fs{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.cellya{
+    margin-left: 45px;
+    margin-top: 10px;
+}
+.opensky{
+    margin-left: 15px;
+    margin-top: 10px;
+}

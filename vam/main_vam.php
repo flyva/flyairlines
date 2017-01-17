@@ -131,38 +131,36 @@ include('get_pilot_data.php');
                         <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="./index.php?page=staff"><?php echo STAFF; ?></a></li>
-                        <li><a href="./index.php?page=rules"><?php echo RULES; ?></a></li>
-                        <li><a href="./index.php?page=school"><?php echo SCHOOL; ?></a></li>
-                        <li><a href="./index.php?page=nospartenariat"><?php echo "Nos Partenariats"; ?></a></li>
+                        <li><a href="./index.php?page=rules"><?php echo "Réglement"; ?></a></li>
+                        <li><a href="./index.php?page=school"><?php echo "Formations"; ?></a></li>
+                        <li><a href="./index.php?page=ranks"><?php echo "Salaires et Grades"; ?></a></li>
                         <li><a href="http://flyairlinesva-membres.esy.es/forum"><?php echo FORUM; ?></a></li>
-                        <li><a href="./index.php?page=pilot_register"><?php echo REGISTER; ?></a></li>
                     </ul>
                 </li>
+                <li><a href="./index_vam_op.php?page=pilot_options"><?php echo MENU; ?></a></li>
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
-                                        href="#"><?php echo OPERATIONS; ?>
+                                        href="#"><?php echo "La compagnie"; ?>
                         <i class="fa fa-angle-down"></i>
                         <ul class="dropdown-menu">
                             <li><a href="./index.php?page=fleet_public"><?php echo FLEET; ?></a></li>
                             <li><a href="./index.php?page=route_public"><?php echo ROUTES; ?></a></li>
-                            <li><a href="./index.php?page=events"><?php echo "Nos Events"; ?></a></li>
+                            <li><a href="./index.php?page=pilots_public"><?php echo "Pilotes"; ?></a></li>
+                            <li><a href="./index.php?page=events"><?php echo "Events"; ?></a></li>
                             <li><a href="./index.php?page=hubs"><?php echo HUBS; ?></a></li>
                             <li><a href="./index.php?page=tours"><?php echo TOURS; ?></a></li>
-                            <li><a href="./index.php?page=ranks"><?php echo PILOT_RANKS; ?></a></li>
-                            <li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>
+                            <!--<li><a href="./index.php?page=awards"><?php echo AWARDS; ?></a></li>-->
+                        </ul>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"
+                                        href="#"><?php echo "Finance et Vols"; ?>
+                        <i class="fa fa-angle-down"></i>
+                        <ul class="dropdown-menu">
+                            <li><a href="./index.php?page=stats"><?php echo STATS; ?></a></li>
                             <li><a href="./index.php?page=va_global_financial_report"><?php echo GLOBAL_FINANCES; ?></a>
                             </li>
                         </ul>
                 </li>
-                <li><a href="./index.php?page=pilots_public"><?php echo PILOTS; ?></a></li>
-                <li><a href="./index.php?page=stats"><?php echo STATS; ?></a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo LANGUAGES; ?>
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php echo $linklanguage; ?>
-                    </ul>
-                </li>
+                <li><a href="./index.php?page=contact"><?php echo "Contact"; ?></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if ($_SESSION["access_administration_panel"] == 1) : ?>
@@ -227,17 +225,19 @@ include('get_pilot_data.php');
     </div>
 </div>
 <div class="container">
-    <?php include('pilot_profile_row1.php'); ?>
+	<div class="bot">
+		<?php include('pilot_profile_row1.php'); ?>
 
-    <?php $medal_pilot = $id;
-    include('pilot_awards.php'); ?>
+		<?php $medal_pilot = $id;
+		include('pilot_awards.php'); ?>
 
-    <?php $medal_pilot = $id;
-    include('pilot_tour_awards.php'); ?>
+		<?php $medal_pilot = $id;
+		include('pilot_tour_awards.php'); ?>
 
-    <?php include('pilot_profile_row2.php'); ?>
+		<?php include('pilot_profile_row2.php'); ?>
 
-    <?php include('pilot_profile_row3.php'); ?>
+		<?php include('pilot_profile_row3.php'); ?>
+	</div>
 </div>
 
 <!--footer start-->
@@ -289,19 +289,19 @@ include('get_pilot_data.php');
                     <ul class="page-footer-list">
                         <li>
                             <i class="fa fa-angle-right"></i>
-                            <a href="about.html">About Us</a>
+                            <a href="./index.php?page=about-us">About Us</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
-                            <a href="faq.html">Support</a>
+                            <a href="./index.php?page=support">Support</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
-                            <a href="privacy-policy.html">Privacy Policy</a>
+                            <a href="./index.php?page=rules">Réglement</a>
                         </li>
                         <li>
                             <i class="fa fa-angle-right"></i>
-                            <a href="terms.html">Term & condition</a>
+                            <a href="./index.php?page=nospartenariat">Partenariats</a>
                         </li>
                     </ul>
                 </div>

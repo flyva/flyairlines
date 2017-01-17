@@ -19,8 +19,8 @@
 	if (!$result = $db->query($sql)) {
 		die('There was an error running the query [' . $db->error . ']');
 	}
-	$linklanguage = '';
-	$combolanguage = '';
+	$linklanguage = 'fr';
+	$combolanguage = 'fr';
 	while ($row = $result->fetch_assoc()) {
 		$combolanguage .= " <option value='" . $row['file_sufix'] . "'>" . $row['language_name'] . "</option>";
 		$linklanguage .= "<li><a href=index.php?lang=" . $row['file_sufix'] . ">" . $row['language_name'] . "</a></li>";
